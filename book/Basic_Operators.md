@@ -340,9 +340,9 @@ Note that the array contains four items, but `0..count` only counts as far as `3
 
 *Logical operators* modify or combine the Boolean logic values `true` and `false`. Swift supports the three standard logical operators found in C-based languages:
 
-- Logical NOT (!a)
-- Logical AND (a && b)
-- Logical OR (a || b)
+- Logical NOT (`!a`)
+- Logical AND (`a && b`)
+- Logical OR (`a || b`)
 
 ##Logical NOT Operator
 
