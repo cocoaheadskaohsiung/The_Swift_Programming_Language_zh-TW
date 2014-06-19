@@ -1,10 +1,11 @@
 # Swift 簡易教學
 
-學習一個新程式語言大家做常寫的第一個程式應該就是在螢幕上印出 "Hello, World"。
+學習一個新程式語言大家做常寫的第一個程式應該就是在螢幕上印出 `Hello, World`。
 在 Swift 中只需要一行程式碼：
 ```c
 println("Hello, world")
 ```
+如果您用過 C 或 Objective-C 進行程式開發，您應該會覺得上述的 Swift 語法相當熟悉，上述的範例中這一行程式碼已經是一個完整的程式。
 
 If you have written code in C or Objective-C, this syntax looks familiar to you—in Swift, this line of code is a complete program. You don’t need to import a separate library for functionality like input/output or string handling. Code written at global scope is used as the entry point for the program, so you don’t need a main function. You also don’t need to write semicolons at the end of every statement.
 
