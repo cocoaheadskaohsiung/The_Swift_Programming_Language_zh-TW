@@ -6,5 +6,6 @@
    * [Swift 簡易教學](book/A_Swift_Tour.md)
 * [語言指引](book/README)
    * [基本](book/Basics.md)
+   * [基本運算](book/BasicOperators.md)
 * [語言參考](book/README)
 
