@@ -5,9 +5,16 @@
 ```c
 println("Hello, world")
 ```
-如果您用過 C 或 Objective-C 進行程式開發，您應該會覺得上述的 Swift 語法相當熟悉，上述的範例中這一行程式碼已經是一個完整的程式。
+如果您用過 C 或 Objective-C 進行程式開發，您應該會覺得上述的 Swift 語法相當熟悉，上述的範例中這一行程式碼已經是一個完整可獨立執行的程式。
+您不需要 import[^1] 其他的函式庫或是額外的輸入/輸出字串處理[^2]。
 
-If you have written code in C or Objective-C, this syntax looks familiar to you—in Swift, this line of code is a complete program. You don’t need to import a separate library for functionality like input/output or string handling. Code written at global scope is used as the entry point for the program, so you don’t need a main function. You also don’t need to write semicolons at the end of every statement.
+
+[^1]: Objective-C 使用 #import "xxxxx.h" 來宣告使用其他函式庫的物件或函式
+    C 則使用 #include "xxxxx.h"
+
+[^2]: 可以參見章節[字串與字元]()
+
+Code written at global scope is used as the entry point for the program, so you don’t need a main function. You also don’t need to write semicolons at the end of every statement.
 
 This tour gives you enough information to start writing code in Swift by showing you how to accomplish a variety of programming tasks. Don’t worry if you don’t understand something—everything introduced in this tour is explained in detail in the rest of this book.
 

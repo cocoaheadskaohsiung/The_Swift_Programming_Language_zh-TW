@@ -1,13 +1,17 @@
-The Swift Programming Language 繁體中文版
+The Swift Programming Language 正體中文版
 ====================================
 
-本份文件由 [The Swift Programming Language](http://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/) 翻譯而來，我們非常歡迎任何人一起加入此翻譯計畫，來協助更多繁體中文地區的新手開發者學習 Swift.
+本份文件由 [The Swift Programming Language](http://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/) 翻譯而來，我們非常歡迎任何人一起加入此翻譯計畫，來協助更多正體中文地區的新手開發者學習 Swift.
 
 ---
 
 ## 致謝 ##
 ---
 感謝下面人員參與本翻譯計畫：
+- FrankWu
+- Mikimoto
+- Marcus
+- Aaron
 
 ## 我想協助翻譯 ##
 ---
