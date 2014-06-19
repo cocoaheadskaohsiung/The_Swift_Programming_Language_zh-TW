@@ -6,9 +6,11 @@
 println("Hello, world")
 ```
 如果您用過 C 或 Objective-C 進行程式開發，您應該會覺得上述的 Swift 語法相當熟悉，上述的範例中這一行程式碼已經是一個完整可獨立執行的程式。
-您不需要 import[^Objective-C 使用 #import "xxxxx.h" 來宣告使用其他函式庫的物件或函式 C 則使用 #include "xxxxx.h"] 其他的函式庫或是額外的輸入/輸出字串處理[^可以參見章節[字串與字元]()]。
+您不需要 import `譯注1` 其他的函式庫或是額外的輸入/輸出字串處理 `譯注2`。
 
+    譯注1: Objective-C 使用 #import "xxxxx.h" 來宣告使用其他函式庫的物件或函式 C 則使用 #include "xxxxx.h"
 
+    譯注2: 可以參見章節[字串與字元]()
 
 Code written at global scope is used as the entry point for the program, so you don’t need a main function. You also don’t need to write semicolons at the end of every statement.
 
