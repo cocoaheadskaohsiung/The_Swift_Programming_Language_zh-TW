@@ -1,0 +1,13 @@
+{
+    "name": "The Swift Programming Language 正體中文版",
+    "version": "0.0.0",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CocoaHeads-Kaohsiung/The_Swift_Programming_Language_zh-TW.git"
+    },
+    "author": "Aaron, Dofi, Evan, FrankWu, Mikimoto, Marcus",
+    "dependencies": {
+        "gitbook-plugin-autocover": "0.0.5"
+    }
+}
