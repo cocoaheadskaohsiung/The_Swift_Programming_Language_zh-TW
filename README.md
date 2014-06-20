@@ -9,11 +9,13 @@ The Swift Programming Language 正體中文版
 
 ## 致謝 ##
 ---
-感謝下面人員參與本翻譯計畫：
+感謝下面人員參與本翻譯計畫：(依照暱稱第一個英文字母排序)
+- Aaron
+- Dofi
+- Evan
 - FrankWu
 - Mikimoto
 - Marcus
-- Aaron
 
 ## 我想協助翻譯 ##
 ---
