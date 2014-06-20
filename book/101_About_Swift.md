@@ -1,11 +1,18 @@
 # 關於 Swift
+
+    重要注意事項：
+        本份文件為初步描述 Swift 相關技術的開發用文件。 蘋果公司提供此份文件來協助您在蘋果官方產品上應用此技術。
+        本份文件將在最後釋出的作業系統上進行驗證與測試，而 Swift 語言將依據此份規格進行實作，過程中如有任何變更與修正將會更新此份文件。
+        
+
+
 ~~~
 IMPORTANT
 
 This is a preliminary document for an API or technology in development. Apple is supplying this information to help you plan for the adoption of the technologies and programming interfaces described herein for use on Apple-branded products. This information is subject to change, and software implemented according to this document should be tested with final operating system software and final documentation. Newer versions of this document may be provided with future betas of the API or technology.
 ~~~
 
-Swift 是一種新的程式語言，用於設計 iOS 和 OS X 應用。Swift 結合了 C 和 Objective-C 的優點，並且不受的 C 相容性限制。Swift 採用安全的程式設計​模式（Programming Patterns），並添加了很多新特性，這將使程式設計更簡單，更靈活，也更有趣。Swift 基於成熟及倍受喜愛的 Cocoa 和 Cocoa Touch frameworks（框架），是可以重新想像軟體開發是如何運作的契機。
+Swift 是一種新的程式語言，用於開發 iOS 和 OS X 應用程式。Swift 結合了 C 和 Objective-C 的優點，並且不受的 C 相容性限制。Swift 採用安全的程式設計​模式（Programming Patterns），並添加了很多新特性，這將使程式設計更簡單，更靈活，也更有趣。Swift 基於成熟及倍受喜愛的 Cocoa 和 Cocoa Touch frameworks（框架），是可以重新想像軟體開發是如何運作的契機。
 
 Swift 的開發在許多年前就在進行了，Apple 藉由強化編譯器（compiler）、除錯器（debugger）及框架結構（framework infrastructure），以奠定 Swift 的基石。我們用 ARC（Automatic Reference Counting，自動引用計數）來簡化記憶體管理。我們在Foundation 和 Cocoa 的基礎上構建 framework stack（框架堆疊）並將其標準化。Objective-C 本身支援 block（區塊）、集合語法（collection literal）與模組（module），讓 framework 可以使用現代程式語言的技術，感謝過去奠定的基石，我們現在才能介紹用於未來 Apple 軟體開發的新語言。
 
