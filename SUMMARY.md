@@ -5,7 +5,7 @@
    * [關於 Swift (Mikimoto)](book/101_About_Swift.md)
    * [Swift 簡易教學 (Evan)](book/102_A_Swift_Tour.md)
 * [語言手冊](book/README)
-   * [基本語法 (Dofi)](book/2.01 - The Basics.md)
+   * [基本語法 (Dofi)](book/201_The_Basics.md)
    * [基本運算元](book/Basic_Operators.md)
    * [字串與字元](book/Strings_and_Characters.md)
    * [Collection Types](book/Collection_Types.md)

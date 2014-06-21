@@ -1,18 +1,16 @@
 # 關於 Swift
 
-<!-- toc -->
-
     重要注意事項：
         本份文件為初步描述 Swift 相關技術的開發用文件。蘋果公司提供此份文件來協助您在蘋果官方產品上應用此技術。本份文件將在最後釋出的作業系統上進行驗證與測試，而 Swift 語言將依據此份規格進行實作，過程中如有任何變更與修正將會更新此份文件。
         本文件後續更新版本中將可能包含一些尚在測試中的規格或 API。
 
 Swift 是一種用於開發 iOS 和 OS X 應用程式的新程式語言。它結合了 C 和 Objective-C 的優點，並且改善了 C 相容性限制的缺點。它採用了許多安全的程式設計​模式（Programming Patterns），並添加了很多新特性，這些將使程式設計更簡單、靈活，也更有趣。Swift 基於成熟及倍受喜愛的 Cocoa 和 Cocoa Touch 程式框架（Frameworks）。學習 Swift 將可以讓您重新回味軟體開發是如何運作。
 
-Swift 的開發已經進行許多年了。蘋果公司在已經發展成熟的編譯器（compiler）、除錯器（debugger）及系統框架（framework infrastructure）基礎上開發 Swift。我們用物件記憶體自動回收管理技術（ARC，Automatic Reference Counting）來簡化記憶體管理。我們有基於 Foundation 和 Cocoa 的基礎上先進而且已經成為標準的系統結構（framework stack）。本身支援 區塊（block）、集合迭代（collection literal）與模組化（module）的 Objective-C，讓新的語言不需額外的努力就可以跟現代程式語言的技術接軌。感謝過去的所有努力，我們現在才能介紹用於未來 Apple 軟體開發的新語言。
+Swift 的開發已經進行許多年了。蘋果公司在已經發展成熟的編譯器（compiler）、除錯器（debugger）及系統資訊框架（framework infrastructure）基礎上開發 Swift。我們用物件記憶體自動回收管理技術（ARC，Automatic Reference Counting）來簡化記憶體管理。我們有基於 Foundation 和 Cocoa 的基礎上先進而且已經成為標準的系統結構堆疊（framework stack）。本身支援 區塊（block）、集合迭代（collection literal）與模組化（module）的 Objective-C，讓新的語言不需額外的努力就可以跟現代程式語言的技術接軌。感謝過去的所有努力，我們現在才能介紹用於未來 Apple 軟體開發的新語言。
 
 > **todo** 翻譯中
 
-Objective-C 開發者應該會對 Swift 這個新程式語言非常容易上手。Swift 採用了 Objective-C 的命名參數以及 dynamic object module（動態物件模型），可以無縫地對接到現有的 Cocoa framework，並且可以相容於 Objective-C 的程式碼。在此基礎之上，Swift 有許多新功能，並將語言在程序（procedural）及物件導向（object oriented）的部分做了結合。
+Objective-C 開發者應該會對 Swift 這個新程式語言非常熟悉。Swift 與 Objective-C 在參數命名上有同樣的可閱讀性，在動態物件模組（dynamic object module）也有相同的威力。可以讓您無縫接軌到現有的 Cocoa （frameworks），並且可以相容於 Objective-C 的程式碼。在此基礎之上，Swift 有許多新功能，並將語言在程序（procedural）及物件導向（object oriented）的部分做了結合。
 
 Swift feels familiar to Objective-C developers. It adopts the readability of Objective-C’s named parameters and the power of Objective-C’s dynamic object model. It provides seamless access to existing Cocoa frameworks and mix-and-match interoperability with Objective-C code. Building from this common ground, Swift introduces many new features and unifies the procedural and object-oriented portions of the language.
 
