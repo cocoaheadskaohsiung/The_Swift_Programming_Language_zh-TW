@@ -379,7 +379,7 @@ In contrast with `switch` statements in C and Objective-C, `switch` statements i
 
 > **NOTE**
 > 
-> You can still break out of a matched `switch` case before that case has completed its execution if you need to. See [Break in a Switch Statement](#Break in a Switch Statement "Break in a Switch Statement") for details.
+> You can still break out of a matched `switch` case before that case has completed its execution if you need to. See [Break in a Switch Statement](#break-in-a-switch-statement "Break in a Switch Statement") for details.
 
 The body of each case *must* contain at least one executable statement. It is not valid to write the following code, because the first case is empty:
 
@@ -409,7 +409,7 @@ value 2:
 
 > NOTE
 > 
-> To opt in to fallthrough behavior for a particular `switch` case, use the `fallthrough` keyword, as described in [Fallthrough](#Fallthrough "Fallthrough").
+> To opt in to fallthrough behavior for a particular `switch` case, use the `fallthrough` keyword, as described in [Fallthrough](#fallthrough "Fallthrough").
 
 ####Range Matching
 
