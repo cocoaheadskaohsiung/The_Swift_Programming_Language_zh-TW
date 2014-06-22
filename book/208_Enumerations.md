@@ -84,7 +84,7 @@ You can read this code as:
 
 …and so on.
 
-As described in [Control Flow](205_Control_Flow.md "Control Flow"), a `switch` statement must be exhaustive when considering an enumeration’s members. If the `case` for `.West` is omitted, this code does not compile, because it does not consider the complete list of `CompassPoint` members. Requiring exhaustiveness ensures that enumeration members are not accidentally omitted.
+As described in [Control Flow](205_Control_Flow.html "Control Flow"), a `switch` statement must be exhaustive when considering an enumeration’s members. If the `case` for `.West` is omitted, this code does not compile, because it does not consider the complete list of `CompassPoint` members. Requiring exhaustiveness ensures that enumeration members are not accidentally omitted.
 
 When it is not appropriate to provide a `case` for every enumeration member, you can provide a default case to cover any members that are not addressed explicitly:
 

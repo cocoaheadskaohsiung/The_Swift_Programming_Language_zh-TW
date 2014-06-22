@@ -64,7 +64,7 @@ numberOfLegs["bird"] = 2
 
 The example above defines a variable called `numberOfLegs` and initializes it with a dictionary literal containing three key-value pairs. The type of the `numberOfLegs` dictionary is inferred to be `Dictionary<String, Int>`. After creating the dictionary, this example uses subscript assignment to add a `String` key of `"bird"` and an `Int` value of `2` to the dictionary.
 
-For more information about `Dictionary` subscripting, see [Accessing and Modifying a Dictionary](204_Collection_Types#accessing-and-modifying-a-dictionary "Accessing and Modifying a Dictionary").
+For more information about `Dictionary` subscripting, see [Accessing and Modifying a Dictionary](204_Collection_Types.html#accessing-and-modifying-a-dictionary "Accessing and Modifying a Dictionary").
 
 > NOTE
 >
@@ -103,7 +103,7 @@ struct Matrix {
 }
 ```
 
-`Matrix` provides an initializer that takes two parameters called `rows` and `columns`, and creates an array that is large enough to store `rows * columns` values of type `Double`. Each position in the matrix is given an initial value of `0.0`. To achieve this, the array’s size, and an initial cell value of `0.0`, are passed to an array initializer that creates and initializes a new array of the correct size. This initializer is described in more detail in [Creating and Initializing an Array](204_Collection_Types#creating-and-initializing-an-array "Creating and Initializing an Array").
+`Matrix` provides an initializer that takes two parameters called `rows` and `columns`, and creates an array that is large enough to store `rows * columns` values of type `Double`. Each position in the matrix is given an initial value of `0.0`. To achieve this, the array’s size, and an initial cell value of `0.0`, are passed to an array initializer that creates and initializes a new array of the correct size. This initializer is described in more detail in [Creating and Initializing an Array](204_Collection_Types.html#creating-and-initializing-an-array "Creating and Initializing an Array").
 
 You can construct a new `Matrix` instance by passing an appropriate row and column count to its initializer:
 
