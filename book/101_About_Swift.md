@@ -8,14 +8,16 @@ Swift 是一種用於開發 iOS 和 OS X 應用程式的新程式語言。它結
 
 Swift 的開發已經進行許多年了。蘋果公司在已經發展成熟的編譯器（compiler）、除錯器（debugger）及系統資訊框架（framework infrastructure）基礎上開發 Swift。我們用物件記憶體自動回收管理技術（ARC，Automatic Reference Counting）來簡化記憶體管理。我們有基於 Foundation 和 Cocoa 的基礎上先進而且已經成為標準的系統結構堆疊（framework stack）。本身支援 區塊（block）、集合迭代（collection literal）與模組化（module）的 Objective-C，讓新的語言不需額外的努力就可以跟現代程式語言的技術接軌。感謝過去的所有努力，我們現在才能介紹用於未來 Apple 軟體開發的新語言。
 
+Objective-C 開發者應該會對 Swift 這個新程式語言非常熟悉。Swift 與 Objective-C 在參數命名上有同樣的可閱讀性，在動態物件模組（dynamic object module）也有相同的能力。可以讓您無縫接軌到現有的 Cocoa 程式框架（frameworks），並且可以相容於 Objective-C 的程式碼。在此基礎上 Swift 引進了許多新功能，在程序導向（procedural）及物件導向（object oriented）兩種型態的語言間巧妙的做了結合。
+
+Swift 對於初學者也很友善，它是第一個兼具工業等級的系統程式設計語言，以及充滿趣味及直觀的腳本語言（script language）兩種特性的程式語言。它支援 playground 模式。這個模式可以讓程式設計師不用編譯與執行應用程式，就能立即看到 Swift 程式碼的執行結果。
+
 > **todo** 翻譯中
 
-Objective-C 開發者應該會對 Swift 這個新程式語言非常熟悉。Swift 與 Objective-C 在參數命名上有同樣的可閱讀性，在動態物件模組（dynamic object module）也有相同的威力。可以讓您無縫接軌到現有的 Cocoa （frameworks），並且可以相容於 Objective-C 的程式碼。在此基礎之上，Swift 有許多新功能，並將語言在程序（procedural）及物件導向（object oriented）的部分做了結合。
+Swift 結合了現代程式語言中和 Apple 工程師文化的智慧結合了起來。編譯器對效能進行最佳化，而程式語言對開發進行最佳化，兩者互不干擾，魚與熊掌兼得。Swift 既可以用於開發 “hello, world” 這樣的小程式，也可以用於開發一套完整的作業系統，所有的這些功能讓 Swift 對於開發者和 Apple 來說都是一項值得的投資。
 
-Swift feels familiar to Objective-C developers. It adopts the readability of Objective-C’s named parameters and the power of Objective-C’s dynamic object model. It provides seamless access to existing Cocoa frameworks and mix-and-match interoperability with Objective-C code. Building from this common ground, Swift introduces many new features and unifies the procedural and object-oriented portions of the language.
+Swift combines the best in modern language thinking with wisdom from the wider Apple engineering culture. The compiler is optimized for performance, and the language is optimized for development, without compromising on either. It’s designed to scale from “hello, world” to an entire operating system. All this makes Swift a sound future investment for developers and for Apple.
 
-Swift 對於初學者也很友善，它是第一個工業品質的系統程式設計語言，又具有腳本語言（script language）充滿表現力及和趣味的程式語言。它支援程式碼預覽（playground），這項創新的功能可以讓程式設計師不用編譯與執行應用程式，就能預覽 Swift 程式碼的執行結果。
-
-Swift 將現代程式語言的精華和 Apple 工程師文化的智慧結合了起來。編譯器對效能進行最佳化，而程式語言對開發進行最佳化，兩者互不干擾，魚與熊掌兼得。Swift 既可以用於開發 “hello, world” 這樣的小程式，也可以用於開發一套完整的作業系統，所有的這些功能讓 Swift 對於開發者和 Apple 來說都是一項值得的投資。
+Swift is a fantastic way to write iOS and OS X apps, and will continue to evolve with new features and capabilities. Our goals for Swift are ambitious. We can’t wait to see what you create with it.
 
 用 Swift 設計 iOS 和 OS X 的應用將是一場美妙的體驗，Swift 之後也會不斷開發新功能與相容性，我們對 Swift 充滿信心，你還在等什麼！
