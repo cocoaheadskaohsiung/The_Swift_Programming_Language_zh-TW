@@ -79,7 +79,7 @@ for (animalName, legCount) in numberOfLegs {
 // cats have 4 legs
 ```
 
-Items in a `Dictionary` may not necessarily be iterated in the same order as they were inserted. The contents of a `Dictionary` are inherently unordered, and iterating over them does not guarantee the order in which they will be retrieved. For more on arrays and dictionaries, see [Collection Types].)
+Items in a `Dictionary` may not necessarily be iterated in the same order as they were inserted. The contents of a `Dictionary` are inherently unordered, and iterating over them does not guarantee the order in which they will be retrieved. For more on arrays and dictionaries, see [Collection Types](204_Collection_Types.html "Collection Types").)
 
 In addition to arrays and dictionaries, you can also use the `for`-`in` loop to iterate over the `Character` values in a string:
 
@@ -535,7 +535,7 @@ As in the previous example, the final case matches all possible remaining values
 - fallthrough
 - return
 
-The `control`, `break` and `fallthrough` statements are described below. The `return` statement is described in [Functions].
+The `control`, `break` and `fallthrough` statements are described below. The `return` statement is described in [Functions](206_Functions.html "Functions").
 
 ### Continue
 
@@ -712,8 +712,3 @@ The dice is rolled at the start of each loop. Rather than moving the player imme
 > If the `break` statement above did not use the `gameLoop` label, it would break out of the `switch` statement, not the `while` statement. Using the `gameLoop` label makes it clear which control statement should be terminated.
 > 
 > Note also that it is not strictly necessary to use the `gameLoop` label when calling `continue gameLoop` to jump to the next iteration of the loop. There is only one loop in the game, and so there is no ambiguity as to which loop the `continue` statement will affect. However, there is no harm in using the `gameLoop` label with the `continue` statement. Doing so is consistent with the label’s use alongside the `break` statement, and helps make the game’s logic clearer to read and understand.
-
-
-[Collection Types]: 204_Collection_Types.html "Collection Types"
-
-[Functions]: 206_Functions.html "Functions"

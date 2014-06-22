@@ -19,7 +19,7 @@ Classes and structures in Swift have many things in common. Both can:
 - Be extended to expand their functionality beyond a default implementation
 - Conform to protocols to provide standard functionality of a certain kind
 
-For more information, see [Properties], [Methods], [Subscripts], [Initialization], [Extensions], and [Protocols].
+For more information, see [Properties](210_Properties.html "Properties"), [Methods](211_Methods.html "Methods"), [Subscripts](212_Subscripts.html "Subscripts"), [Initialization](214_Initialization.html "Initialization"), [Extensions](220_Extensions.html "Extensions"), and [Protocols](221_Protocols.html "Protocols").
 
 Classes have additional capabilities that structures do not:
 
@@ -28,7 +28,7 @@ Classes have additional capabilities that structures do not:
 - Deinitializers enable an instance of a class to free up any resources it has assigned.
 - Reference counting allows more than one reference to a class instance.
 
-For more information, see [Inheritance], [Type Casting], [Initialization], and [Automatic Reference Counting].
+For more information, see [Inheritance](213_Inheritance.html "Inheritance"), [Type Casting](218_Type_Casting.html "Type Casting"), [Initialization](214_Initialization.html "Initialization"), and [Automatic Reference Counting](216_Automatic_Reference_Counting.html "Automatic Reference Counting").
 
 > **NOTE**
 >
@@ -81,7 +81,7 @@ let someResolution = Resolution()
 let someVideoMode = VideoMode()
 ```
 
-Structures and classes both use initializer syntax for new instances. The simplest form of initializer syntax uses the type name of the class or structure followed by empty parentheses, such as `Resolution()` or `VideoMode()`. This creates a new instance of the class or structure, with any properties initialized to their default values. Class and structure initialization is described in more detail in [Initialization].
+Structures and classes both use initializer syntax for new instances. The simplest form of initializer syntax uses the type name of the class or structure followed by empty parentheses, such as `Resolution()` or `VideoMode()`. This creates a new instance of the class or structure, with any properties initialized to their default values. Class and structure initialization is described in more detail in [Initialization](214_Initialization.html "Initialization").
 
 ### Accessing Properties
 
@@ -121,7 +121,7 @@ All structures have an automatically-generated *memberwise initializer*, which y
 let vga = Resolution(width: 640, height: 480)
 ```
 
-Unlike structures, class instances do not receive a default memberwise initializer. Initializers are described in more detail in [Initialization].
+Unlike structures, class instances do not receive a default memberwise initializer. Initializers are described in more detail in [Initialization](214_Initialization.html "Initialization").
 
 ## Structures and Enumerations Are Value Types
 
@@ -238,7 +238,7 @@ Note that “identical to” (represented by three equals signs, or `===`) does 
 - “Identical to” means that two constants or variables of class type refer to exactly the same class instance.
 - “Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type’s designer.
 
-When you define your own custom classes and structures, it is your responsibility to decide what qualifies as two instances being “equal”. The process of defining your own implementations of the “equal to” and “not equal to” operators is described in [Equivalence Operators].
+When you define your own custom classes and structures, it is your responsibility to decide what qualifies as two instances being “equal”. The process of defining your own implementations of the “equal to” and “not equal to” operators is described in [Equivalence Operators](223_Advanced_Operators.html#equivalence-operators "Equivalence Operators").
 
 ### Pointers
 
@@ -423,18 +423,3 @@ println(names[0])
 > **NOTE**
 >
 > If you simply need to be sure that your reference to an array’s contents is the only reference in existence, call the `unshare` method, not the `copy` method. The `unshare` method does not make a copy of the array unless it is necessary to do so. The `copy` method always copies the array, even if it is already unshared.
-
-
-[Properties]: 210_Properties.html "Properties"
-[Methods]: 211_Methods.html "Methods"
-[Subscripts]: 212_Subscripts.html "Subscripts"
-[Initialization]: 214_Initialization.html "Initialization"
-[Extensions]: 220_Extensions.html "Extensions"
-[Protocols]: 221_Protocols.html "Protocols"
-
-[Inheritance]: 213_Inheritance.html "Inheritance"
-[Type Casting]: 218_Type_Casting.html "Type Casting"
-[Initialization]: 214_Initialization.html "Initialization"
-[Automatic Reference Counting]:  216_Automatic_Reference_Counting.html "Automatic Reference Counting"
-
-[Equivalence Operators]: 223_Advanced_Operators.html#equivalence-operators "Equivalence Operators"

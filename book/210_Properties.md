@@ -10,7 +10,7 @@ In addition, you can define property observers to monitor changes in a property�
 
 In its simplest form, a stored property is a constant or variable that is stored as part of an instance of a particular class or structure. Stored properties can be either *variable stored properties* (introduced by the `var` keyword) or *constant stored properties* (introduced by the `let` keyword).
 
-You can provide a default value for a stored property as part of its definition, as described in [Default Property Values]. You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in [Modifying Constant Properties During Initialization].
+You can provide a default value for a stored property as part of its definition, as described in [Default Property Values](214_Initialization.html#default-property-values "Default Property Values"). You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in [Modifying Constant Properties During Initialization](214_Initialization.html#modifying-constant-properties-during-initialization "Modifying Constant Properties During Initialization").
 
 The example below defines a structure called `FixedLengthRange`, which describes a range of integers whose range length cannot be changed once it is created:
 
@@ -198,7 +198,7 @@ This example defines a new structure called `Cuboid`, which represents a 3D rect
 
 *Property observers* observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.
 
-You can add property observers to any stored properties you define, apart from lazy stored properties. You can also add property observers to any inherited property (whether stored or computed) by overriding the property within a subclass. Property overriding is described in [Overriding].
+You can add property observers to any stored properties you define, apart from lazy stored properties. You can also add property observers to any inherited property (whether stored or computed) by overriding the property within a subclass. Property overriding is described in [Overriding](213_Inheritance.html#overriding "Overriding").
 
 > **NOTE**
 >
@@ -399,9 +399,3 @@ println(rightChannel.currentLevel)
 println(AudioChannel.maxInputLevelForAllChannels)
 // prints "10"
 ```
-
-
-[Default Property Values]: 214_Initialization.html#default-property-values "Default Property Values"
-[Modifying Constant Properties During Initialization]: 214_Initialization.html#modifying-constant-properties-during-initialization "Modifying Constant Properties During Initialization"
-
-[Overriding]: 213_Inheritance.html#overriding "Overriding"

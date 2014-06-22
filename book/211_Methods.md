@@ -6,7 +6,7 @@ The fact that structures and enumerations can define methods in Swift is a major
 
 ## Instance Methods
 
-*Instance methods* are functions that belong to instances of a particular class, structure, or enumeration. They support the functionality of those instances, either by providing ways to access and modify instance properties, or by providing functionality related to the instance’s purpose. Instance methods have exactly the same syntax as functions, as described in [Functions].
+*Instance methods* are functions that belong to instances of a particular class, structure, or enumeration. They support the functionality of those instances, either by providing ways to access and modify instance properties, or by providing functionality related to the instance’s purpose. Instance methods have exactly the same syntax as functions, as described in [Functions](206_Functions.html "Functions").
 
 You write an instance method within the opening and closing braces of the type it belongs to. An instance method has implicit access to all other instance methods and properties of that type. An instance method can be called only on a specific instance of the type it belongs to. It cannot be called in isolation without an existing instance.
 
@@ -50,7 +50,7 @@ counter.reset()
 
 ### Local and External Parameter Names for Methods
 
-Function parameters can have both a local name (for use within the function’s body) and an external name (for use when calling the function), as described in [External Parameter Names]. The same is true for method parameters, because methods are just functions that are associated with a type. However, the default behavior of local names and external names is different for functions and methods.
+Function parameters can have both a local name (for use within the function’s body) and an external name (for use when calling the function), as described in [External Parameter Names](206_Functions.html#external-parameter-names "External Parameter Names"). The same is true for method parameters, because methods are just functions that are associated with a type. However, the default behavior of local names and external names is different for functions and methods.
 
 Methods in Swift are very similar to their counterparts in Objective-C. As in Objective-C, the name of a method in Swift typically refers to the method’s first parameter using a preposition such as `with`, `for`, or `by`, as seen in the `incrementBy` method from the preceding `Counter` class example. The use of a preposition enables the method to be read as a sentence when it is called. Swift makes this established method naming convention easy to write by using a different default approach for method parameters than it uses for function parameters.
 
@@ -151,7 +151,7 @@ println("The point is now at (\(somePoint.x), \(somePoint.y))")
 
 The `Point` structure above defines a mutating `moveByX` method, which moves a `Point` instance by a certain amount. Instead of returning a new point, this method actually modifies the point on which it is called. The `mutating` keyword is added to its definition to enable it to modify its properties.
 
-Note that you cannot call a mutating method on a constant of structure type, because its properties cannot be changed, even if they are variable properties, as described in [Stored Properties of Constant Structure Instances]:
+Note that you cannot call a mutating method on a constant of structure type, because its properties cannot be changed, even if they are variable properties, as described in [Stored Properties of Constant Structure Instances](210_Properties.html#stored-properties-of-constant-structure-instances "Stored Properties of Constant Structure Instances"):
 
 ```swfit
 let fixedPoint = Point(x: 3.0, y: 3.0)
@@ -293,9 +293,3 @@ if player.tracker.advanceToLevel(6) {
 }
 // prints "level 6 has not yet been unlocked"
 ```
-
-
-[Functions]: 206_Functions.html "Functions"
-[External Parameter Names]: 206_Functions.html#external-parameter-names "External Parameter Names"
-
-[Stored Properties of Constant Structure Instances]: 210_Properties.html#stored-properties-of-constant-structure-instances "Stored Properties of Constant Structure Instances"

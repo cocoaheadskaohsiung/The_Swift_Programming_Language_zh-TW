@@ -7,7 +7,7 @@ Closures can capture and store references to any constants and variables from th
 >
 > Don’t worry if you are not familiar with the concept of “capturing”. It is explained in detail below in [Capturing Values](#capturing-values "Capturing Values").
 
-Global and nested functions, as introduced in [Functions], are actually special cases of closures. Closures take one of three forms:
+Global and nested functions, as introduced in [Functions](206_Functions.html "Functions"), are actually special cases of closures. Closures take one of three forms:
 
 - Global functions are closures that have a name and do not capture any values.
 - Nested functions are closures that have a name and can capture values from their enclosing function.
@@ -22,7 +22,7 @@ Swift’s closure expressions have a clean, clear style, with optimizations that
 
 ## Closure Expressions##
 
-Nested functions, as introduced in [Nested Functions], are a convenient means of naming and defining self-contained blocks of code as part of a larger function. However, it is sometimes useful to write shorter versions of function-like constructs without a full declaration and name. This is particularly true when you work with functions that take other functions as one or more of their arguments.
+Nested functions, as introduced in [Nested Functions](206_Functions.html#nested-functions "Nested Functions"), are a convenient means of naming and defining self-contained blocks of code as part of a larger function. However, it is sometimes useful to write shorter versions of function-like constructs without a full declaration and name. This is particularly true when you work with functions that take other functions as one or more of their arguments.
 
 *Closure expressions* are a way to write inline closures in a brief, focused syntax. Closure expressions provide several syntax optimizations for writing closures in their simplest form without loss of clarity or intent. The closure expression examples below illustrate these optimizations by refining a single example of the `sort` function over several iterations, each of which expresses the same functionality in a more succinct way.
 
@@ -131,7 +131,7 @@ There’s actually an even *shorter* way to write the closure expression above. 
 reversed = sort(names, >)
 ```
 
-For more about operator functions, see [Operator Functions].
+For more about operator functions, see [Operator Functions](223_Advanced_Operators.html#operator-functions "Operator Functions").
 
 ## Trailing Closures##
 If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a *trailing closure* instead. A trailing closure is a closure expression that is written outside of (and *after*) the parentheses of the function call it supports:
@@ -198,7 +198,7 @@ let strings = numbers.map {
 
 The `map` function calls the closure expression once for each item in the array. You do not need to specify the type of the closure’s input parameter, `number`, because the type can be inferred from the values in the array to be mapped.
 
-In this example, the closure’s `number` parameter is defined as a *variable parameter*, as described in [Constant and Variable Parameters], so that the parameter’s value can be modified within the closure body, rather than declaring a new local variable and assigning the passed `number` value to it. The closure expression also specifies a return type of `String`, to indicate the type that will be stored in the mapped output array.
+In this example, the closure’s `number` parameter is defined as a *variable parameter*, as described in [Constant and Variable Parameters](206_Functions.html#constant-and-variable-parameters "Constant and Variable Parameters"), so that the parameter’s value can be modified within the closure body, rather than declaring a new local variable and assigning the passed `number` value to it. The closure expression also specifies a return type of `String`, to indicate the type that will be stored in the mapped output array.
 
 The closure expression builds a string called `output` each time it is called. It calculates the last digit of `number` by using the remainder operator (`number % 10`), and uses this digit to look up an appropriate string in the `digitNames` dictionary.
 
@@ -233,7 +233,7 @@ func makeIncrementor(forIncrement amount: Int) -> () -> Int {
 }
 ```
 
-The return type of `makeIncrementor` is `() -> Int`. This means that it returns a *function*, rather than a simple value. The function it returns has no parameters, and returns an `Int` value each time it is called. To learn how functions can return other functions, see [Function Types as Return Types].
+The return type of `makeIncrementor` is `() -> Int`. This means that it returns a *function*, rather than a simple value. The function it returns has no parameters, and returns an `Int` value each time it is called. To learn how functions can return other functions, see [Function Types as Return Types](206_Functions.html#function-types-as-return-types "Function Types as Return Types").
 
 The `makeIncrementor` function defines an integer variable called `runningTotal`, to store the current running total of the incrementor that will be returned. This variable is initialized with a value of `0`.
 
@@ -289,7 +289,7 @@ incrementByTen()
 
 > **Note**
 >
-> If you assign a closure to a property of a class instance, and the closure captures that instance by referring to the instance or its members, you will create a strong reference cycle between the closure and the instance. Swift uses *capture lists* to break these strong reference cycles. For more information, see [Strong Reference Cycles for Closures].
+> If you assign a closure to a property of a class instance, and the closure captures that instance by referring to the instance or its members, you will create a strong reference cycle between the closure and the instance. Swift uses *capture lists* to break these strong reference cycles. For more information, see [Strong Reference Cycles for Closures](216_Automatic_Reference_Counting.html#strong-reference-cycles-for-closures "Strong Reference Cycles for Closures").
 
 ## Closures Are Reference Types##
 
@@ -304,16 +304,3 @@ let alsoIncrementByTen = incrementByTen
 alsoIncrementByTen()
 // returns a value of 50
 ```
-
-
-[Functions]: 206_Functions.html
-
-[Nested Functions]: 206_Functions.html#nested-functions "Nested Functions"
-
-[Operator Functions]: 223_Advanced_Operators.html#operator-functions "Operator Functions"
-
-[Constant and Variable Parameters]: 206_Functions.html#constant-and-variable-parameters "Constant and Variable Parameters"
-
-[Function Types as Return Types]: 206_Functions.html#function-types-as-return-types "Function Types as Return Types")
-
-[Strong Reference Cycles for Closures]: 216_Automatic_Reference_Counting.html#strong-reference-cycles-for-closures "Strong Reference Cycles for Closures"

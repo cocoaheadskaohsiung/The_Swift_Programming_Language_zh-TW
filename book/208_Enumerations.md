@@ -8,7 +8,7 @@ Alternatively, enumeration members can specify associated values of *any* type t
 
 Enumerations in Swift are first-class types in their own right. They adopt many features traditionally supported only by classes, such as computed properties to provide additional information about the enumeration’s current value, and instance methods to provide functionality related to the values the enumeration represents. Enumerations can also define initializers to provide an initial member value; can be extended to expand their functionality beyond their original implementation; and can conform to protocols to provide standard functionality.
 
-For more on these capabilities, see [Properties], [Methods], [Initialization], [Extensions], and [Protocols].
+For more on these capabilities, see [Properties]( 210_Properties.html "Properties"), [Methods](211_Methods.html "Methods"), [Initialization](214_Initialization.html "Initialization"), [Extensions](220_Extensions.html "Extensions"), and [Protocols](221_Protocols.html "Protocols").
 
 ## Enumeration Syntax
 
@@ -84,7 +84,7 @@ You can read this code as:
 
 …and so on.
 
-As described in [Control Flow], a `switch` statement must be exhaustive when considering an enumeration’s members. If the `case` for `.West` is omitted, this code does not compile, because it does not consider the complete list of `CompassPoint` members. Requiring exhaustiveness ensures that enumeration members are not accidentally omitted.
+As described in [Control Flow](205_Control_Flow.md "Control Flow"), a `switch` statement must be exhaustive when considering an enumeration’s members. If the `case` for `.West` is omitted, this code does not compile, because it does not consider the complete list of `CompassPoint` members. Requiring exhaustiveness ensures that enumeration members are not accidentally omitted.
 
 When it is not appropriate to provide a `case` for every enumeration member, you can provide a default case to cover any members that are not addressed explicitly:
 
@@ -234,12 +234,3 @@ if let somePlanet = Planet.fromRaw(positionToFind) {
 ```
 
 This example uses optional binding to try to access a planet with a raw value of `9`. The statement `if let somePlanet = Planet.fromRaw(9)` retrieves an optional `Planet`, and sets `somePlanet` to the contents of that optional `Planet` if it can be retrieved. In this case, it is not possible to retrieve a planet with a position of `9`, and so the `else` branch is executed instead.
-
-
-[Properties]: 210_Properties.html "Properties"
-[Methods]: 211_Methods.html "Methods"
-[Initialization]: 214_Initialization.html "Initialization"
-[Extensions]: 220_Extensions.html "Extensions"
-[Protocols]: 221_Protocols.html "Protocols"
-
-[Control Flow]: 205_Control_Flow.md "Control Flow"
