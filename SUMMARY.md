@@ -13,7 +13,7 @@
    * [Functions](book/206_Functions.md)
    * [Closures](book/207_Closures.md)
    * [Enumerations](book/208_Enumerations.md)
-   * [Classes and Structures](book/209_Classes_And_Structures.md)
+   * [Classes and Structures](book/209_Classes_and_Structures.md)
    * [Properties](book/210_Properties.md)
    * [Methods](book/211_Methods.md)
    * [Subscripts](book/212_Subscripts.md)
