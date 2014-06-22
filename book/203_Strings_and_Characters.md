@@ -107,7 +107,7 @@ for character in "Dog!🐶" {
 // 🐶
 ```
 
-The `for`-`in` loop is described in [For Loops]().
+The `for`-`in` loop is described in [For Loops](205_Control_Flow.html#for-loops "For Loop").
 
 Alternatively, create a stand-alone `Character` constant or variable from a single-character string literal by providing a `Character` type annotation:
 
@@ -277,7 +277,7 @@ When a Unicode string is written to a text file or some other storage, these uni
 
 Swift provides several different ways to access Unicode representations of strings.
 
-You can iterate over the string with a `for`-`in` statement, to access its individual `Character` values as Unicode characters. This process is described in [Working with Characters]().
+You can iterate over the string with a `for`-`in` statement, to access its individual `Character` values as Unicode characters. This process is described in [Working with Characters](#working-with-characters "Working with Characters").
 
 Alternatively, access a `String` value in one of three other Unicode-compliant representations:
 
