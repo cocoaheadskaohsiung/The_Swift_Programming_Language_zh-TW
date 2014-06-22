@@ -12,12 +12,6 @@ Objective-C 開發者應該會對 Swift 這個新程式語言非常熟悉。Swif
 
 Swift 對於初學者也很友善，它是第一個兼具工業等級的系統程式設計語言，以及充滿趣味及直觀的腳本語言（script language）兩種特性的程式語言。它支援 playground 模式。這個模式可以讓程式設計師不用編譯與執行應用程式，就能立即看到 Swift 程式碼的執行結果。
 
-> **todo** 翻譯中
+Swift 結合了現代程式語言中最睿智的思維和蘋果電腦深厚的工程師文化。編譯器對效能的最佳化與 Swift 對開發過程的最佳化兩者可以毫無違和且互不干擾。Swift 既可以用於開發 “hello, world” 這樣的小程式，也可以用於開發一套完整的作業系統。前述所有的功能讓 Swift 對於開發者和蘋果電腦來說都是一項非常划算的投資。
 
-Swift 結合了現代程式語言中和 Apple 工程師文化的智慧結合了起來。編譯器對效能進行最佳化，而程式語言對開發進行最佳化，兩者互不干擾，魚與熊掌兼得。Swift 既可以用於開發 “hello, world” 這樣的小程式，也可以用於開發一套完整的作業系統，所有的這些功能讓 Swift 對於開發者和 Apple 來說都是一項值得的投資。
-
-Swift combines the best in modern language thinking with wisdom from the wider Apple engineering culture. The compiler is optimized for performance, and the language is optimized for development, without compromising on either. It’s designed to scale from “hello, world” to an entire operating system. All this makes Swift a sound future investment for developers and for Apple.
-
-Swift is a fantastic way to write iOS and OS X apps, and will continue to evolve with new features and capabilities. Our goals for Swift are ambitious. We can’t wait to see what you create with it.
-
-用 Swift 設計 iOS 和 OS X 的應用將是一場美妙的體驗，Swift 之後也會不斷開發新功能與相容性，我們對 Swift 充滿信心，你還在等什麼！
+用 Swift 設計 iOS 和 OS X 的應用將是一場美妙的體驗，Swift 將會繼續不斷的開發新功能與相容性，我們對 Swift 未來充滿信心並且等不及想知道您用 Swift 開發了什麼新玩意。
