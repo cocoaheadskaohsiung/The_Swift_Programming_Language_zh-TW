@@ -1,4 +1,4 @@
-#Functions
+# Functions
 ---
 *Functions* are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
 
@@ -6,7 +6,7 @@ Swift’s unified function syntax is flexible enough to express anything from a 
 
 Every function in Swift has a type, consisting of the function’s parameter types and return type. You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.
 
-##Defining and Calling Functions##
+## Defining and Calling Functions##
 
 When you define a function, you can optionally define one or more named, typed values that the function takes as input (known as *parameters*), and/or a type of value that the function will pass back as output when it is done (known as its *return type*).
 
@@ -48,11 +48,11 @@ println(sayHelloAgain("Anna"))
 // prints "Hello again, Anna!"
 ```
 
-##Function Parameters and Return Values##
+## Function Parameters and Return Values##
 
 Function parameters and return values are extremely flexible in Swift. You can define anything from a simple utility function with a single unnamed parameter to a complex function with expressive parameter names and different parameter options.
 
-###Multiple Input Parameters###
+### Multiple Input Parameters###
 
 Functions can have multiple input parameters, which are written within the function’s parentheses, separated by commas.
 
@@ -66,7 +66,7 @@ println(halfOpenRangeLength(1, 10))
 // prints "9"
 ```
 
-###Functions Without Parameters###
+### Functions Without Parameters###
 
 Functions are not required to define input parameters. Here’s a function with no input parameters, which always returns the same `String` message whenever it is called:
 
@@ -80,7 +80,7 @@ println(sayHelloWorld())
 
 The function definition still needs parentheses after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called.
 
-###Functions Without Return Values###
+### Functions Without Return Values###
 
 Functions are not required to define a return type. Here’s a version of the `sayHello` function, called `waveGoodbye`, which prints its own `String` value rather than returning it:
 
@@ -120,7 +120,7 @@ The first function, `printAndCount`, prints a string, and then returns its chara
 >
 > Return values can be ignored, but a function that says it will return a value must always do so. A function with a defined return type cannot allow control to fall out of the bottom of the function without returning a value, and attempting to do so will result in a compile-time error.
 
-###Functions with Multiple Return Values###
+### Functions with Multiple Return Values###
 
 You can use a tuple type as the return type for a function to return multiple values as part of one compound return value.
 
@@ -154,7 +154,7 @@ println("\(total.vowels) vowels and \(total.consonants) consonants")
 
 **Note** that the tuple’s members do not need to be named at the point that the tuple is returned from the function, because their names are already specified as part of the function’s return type.
 
-##Function Parameter Names##
+## Function Parameter Names##
 
 All of the above functions define *parameter names* for their parameters:
 
@@ -167,7 +167,7 @@ func someFunction(parameterName: Int) {
 
 However, these parameter names are only used within the body of the function itself, and cannot be used when calling the function. These kinds of parameter names are known as *local parameter names*, because they are only available for use within the function’s body.
 
-###External Parameter Names###
+### External Parameter Names###
 
 Sometimes it’s useful to name each parameter when you *call* a function, to indicate the purpose of each argument you pass to the function.
 
@@ -223,7 +223,7 @@ The use of external parameter names enables this second version of the `join` fu
 >
 > Consider using external parameter names whenever the purpose of a function’s arguments would be unclear to someone reading your code for the first time. You do not need to specify external parameter names if the purpose of each parameter is clear and unambiguous when the function is called.
 
-###Shorthand External Parameter Names###
+### Shorthand External Parameter Names###
 
 If you want to provide an external parameter name for a function parameter, and the local parameter name is already an appropriate name to use, you do not need to write the same name twice for that parameter. Instead, write the name once, and prefix the name with a hash symbol (`#`). This tells Swift to use that name as both the local parameter name and the external parameter name.
 
@@ -246,7 +246,7 @@ This function’s choice of parameter names makes for a clear, readable function
 let containsAVee = containsCharacter(string: "aardvark", characterToFind: "v")
 // containsAVee equals true, because "aardvark" contains a "v"
 ```
-###Default Parameter Values###
+### Default Parameter Values###
 
 You can define a *default value* for any parameter as part of a function’s definition. If a default value is defined, you can omit that parameter when calling the function.
 
@@ -277,7 +277,7 @@ join(string: "hello", toString: "world")
 // returns "hello world"
 ```
 
-###External Names for Parameters with Default Values###
+### External Names for Parameters with Default Values###
 
 In most cases, it is useful to provide (and therefore require) an external name for any parameter with a default value. This ensures that the argument for that parameter is clear in purpose if a value is provided when the function is called.
 
@@ -302,7 +302,7 @@ join("hello", "world", joiner: "-")
 >
 > You can opt out of this behavior by writing an underscore (`_`) instead of an explicit external name when you define the parameter. However, external names for defaulted parameters are always preferred where appropriate.
 
-##Variadic Parameters##
+## Variadic Parameters##
 
 A *variadic parameter* accepts zero or more values of a specified type. You use a variadic parameter to specify that the parameter can be passed a varying number of input values when the function is called. Write variadic parameters by inserting three period characters (`...`) after the parameter’s type name.
 
@@ -330,7 +330,7 @@ arithmeticMean(3, 8, 19)
 >
 > If your function has one or more parameters with a default value, and also has a variadic parameter, place the variadic parameter after all the defaulted parameters at the very end of the list.
 
-###Constant and Variable Parameters###
+### Constant and Variable Parameters###
 
 Function parameters are constants by default. Trying to change the value of a function parameter from within the body of that function results in a compile-time error. This means that you can’t change the value of a parameter by mistake.
 
@@ -362,7 +362,7 @@ The function starts by working out how many characters need to be added to the l
 >
 > The changes you make to a variable parameter do not persist beyond the end of each call to the function, and are not visible outside the function’s body. The variable parameter only exists for the lifetime of that function call.
 
-###In-Out Parameters###
+### In-Out Parameters###
 
 Variable parameters, as described above, can only be changed within the function itself. If you want a function to modify a parameter’s value, and you want those changes to persist after the function call has ended, define that parameter as an *in-out parameter* instead.
 
@@ -401,7 +401,7 @@ The example above shows that the original values of `someInt` and `anotherInt` a
 >
 > In-out parameters are not the same as returning a value from a function. The `swapTwoInts` example above does not define a return type or return a value, but it still modifies the values of `someInt` and `anotherInt`. In-out parameters are an alternative way for a function to have an effect outside of the scope of its function body.
 
-##Function Types##
+## Function Types##
 
 Every function has a specific *function type*, made up of the parameter types and the return type of the function.
 
@@ -432,7 +432,7 @@ func printHelloWorld() {
 
 The type of this function is `() -> ()`, or “a function that has no parameters, and returns `Void`.” Functions that don’t specify a return value always return `Void`, which is equivalent to an empty tuple in Swift, shown as `()`.
 
-###Using Function Types###
+### Using Function Types###
 
 You use function types just like any other types in Swift. For example, you can define a constant or variable to be of a function type and assign an appropriate function to that variable:
 
@@ -468,7 +468,7 @@ let anotherMathFunction = addTwoInts
 // anotherMathFunction is inferred to be of type (Int, Int) -> Int
 ```
 
-###Function Types as Parameter Types###
+### Function Types as Parameter Types###
 
 You can use a function type such as `(Int, Int) -> Int` as a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.
 
@@ -488,7 +488,7 @@ When `printMathResult` is called, it is passed the `addTwoInts` function, and th
 
 The role of `printMathResult` is to print the result of a call to a math function of an appropriate type. It doesn’t matter what that function’s implementation actually does—it matters only that the function is of the correct type. This enables `printMathResult` to hand off some of its functionality to the caller of the function in a type-safe way.
 
-###Function Types as Return Types###
+### Function Types as Return Types###
 
 You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (`->`) of the returning function.
 
@@ -537,7 +537,7 @@ println("zero!")
 // zero!
 ```
 
-##Nested Functions##
+## Nested Functions##
 
 All of the functions you have encountered so far in this chapter have been examples of *global functions*, which are defined at a global scope. You can also define functions inside the bodies of other functions, known as *nested functions*.
 
