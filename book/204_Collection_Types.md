@@ -182,7 +182,7 @@ for (index, value) in enumerate(shoppingList) {
 // Item 5: Bananas
 ```
 
-For more about the `for`-`in` loop, see [For Loops]().
+For more about the `for`-`in` loop, see [For Loops](205_Control_Flow.html#for-loops "For Loops").
 
 ### Creating and Initializing an Array
 
@@ -347,7 +347,7 @@ for (airportCode, airportName) in airports {
 // LHR: London Heathrow
 ```
 
-For more about the `for`-`in` loop, see [For Loops]().
+For more about the `for`-`in` loop, see [For Loops](205_Control_Flow.html#for-loops "For Loops").
 
 You can also retrieve an iteratable collection of a dictionary’s keys or values by accessing its `keys` and `values` properties:
 
