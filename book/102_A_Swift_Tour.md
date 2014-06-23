@@ -499,4 +499,125 @@ let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
 let sideLength = optionalSquare?.sideLength
 ~~~
 
+## Enumerations 與 Structures
+
+使用 `enum` 來建立列舉(enumeration)。就如同類別與其他命名型別一樣，列舉也能包含方法。
+
+~~~
+enum Rank: Int {
+    case Ace = 1
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
+    func simpleDescription() -> String {
+        switch self {
+        case .Ace:
+            return "ace"
+        case .Jack:
+            return "jack"
+        case .Queen:
+            return "queen"
+        case .King:
+            return "king"
+        default:
+            return String(self.toRaw())
+        }
+    }
+}
+let ace = Rank.Ace
+let aceRawValue = ace.toRaw()
+~~~
+
+~~~
+練習
+請嘗試寫一個函式，依照它們的原始值來比較兩者的排列值
+~~~
+
+在上述的範列中，列舉中的原始值型別為 `Int`, 所以您只需要定義給第一個原始值。剩下的原始值就會按照順序賦值。你也可以使用字串或浮點數來作為列舉的原始值。
+
+始用 `toRaw` 和 `fromRaw` 函式在原始值與列舉值間進行轉換。
+
+~~~
+if let convertedRank = Rank.fromRaw(3) {
+    let threeDescription = convertedRank.simpleDescription()
+}
+~~~
+
+列舉的成員值是實際值，並不是原始值的另一種表示。事實上，如果原始值是無義意的，您就不需要另外提供。
+
+~~~
+enum Suit {
+    case Spades, Hearts, Diamonds, Clubs
+    func simpleDescription() -> String {
+        switch self {
+        case .Spades:
+            return "spades"
+        case .Hearts:
+            return "hearts"
+        case .Diamonds:
+            return "diamonds"
+        case .Clubs:
+            return "clubs"
+        }
+    }
+}
+let hearts = Suit.Hearts
+let heartsDescription = hearts.simpleDescription()
+~~~
+
+~~~
+練習
+為 Suit 加一個 color 方法，對 spades 與 clubs 回傳 "black", 對 hearts 與 diamonds 回傳 "red"。 
+~~~
+
+上述中，請注意有兩種可引用列舉中的 Hearts 成員：為 hearts 賦值成常數時，列舉成員 `Suit.Hearts` 需要全名來引用，因為常數沒有明確的型別。在 switch 中，列舉成員可使用 .Hearts 引用，因為它已經知道是一個 suit。在任何情形下，對於已知的型別您可以使用縮寫。
+
+使用 `struct` 來建立結構(structure)。Structure 支援許多與類別相同的行為，包含方法與初使化。兩者有一個最大的不同點在於 structure 是傳值，類別是傳的是參考。
+
+~~~
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \
+        (suit.simpleDescription())"
+    }
+}
+let threeOfSpades = Card(rank: .Three, suit: .Spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+~~~
+
+~~~
+練習
+為 Card 寫一個方法能建立一整副撲克牌，而且每張牌的 rank 與 suit 能對應起來。
+~~~
+
+一個列舉成員的實體可以有實體值。相同的列舉成員的實體可以有不一樣的值。當您建立時即可傳入值。實體值與原始值是不同的：列舉成員的原始值對所有的實體都是相同地，當您定義列舉時所提供的原始值。
+
+例如，考慮到從伺服器取得日出與日落時間，伺服器會回應正常或錯誤訊息。
+
+~~~
+enum ServerResponse {
+    case Result(String, String)
+    case Error(String)
+}
+ 
+let success = ServerResponse.Result("6:00 am", "8:09 pm")
+let failure = ServerResponse.Error("Out of cheese.")
+ 
+switch success {
+case let .Result(sunrise, sunset):
+    let serverResponse = "Sunrise is at \(sunrise) and sunset is at \(sunset)."
+case let .Error(error):
+    let serverResponse = "Failure...  \(error)"
+}
+~~~
+
+~~~
+練習
+為 ServerResponse 加上第三種情況給 switch 。
+~~~
+
+注意日出與日落時間是如何從伺服器取得成給 switch case 配對的值
+
+
 (待續)
