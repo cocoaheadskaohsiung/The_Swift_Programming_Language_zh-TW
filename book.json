@@ -33,22 +33,22 @@
             "family": "serif" or "sans",
             "size": 1 to 4
         },
-        "autocover": {
-            "title": "The Swift Programming Language 正體中文版",
-            "author": "Aaron, Dofi, Evan, FrankWu, Mikimoto, Marcus",
-            "font": {
-                        "size": null,
-                        "family": "Impact",
-                        "color": '#FFF'
-            },
-            "size": {
-                        "w": 1800,
-                        "h": 2360
-            },
-            "background": {
-                        "color": '#09F'
-            }
-        },
+        // "autocover": {
+        //     "title": "The Swift Programming Language 正體中文版",
+        //     "author": "Aaron, Dofi, Evan, FrankWu, Mikimoto, Marcus",
+        //     "font": {
+        //                 "size": null,
+        //                 "family": "Impact",
+        //                 "color": '#FFF'
+        //     },
+        //     "size": {
+        //                 "w": 1800,
+        //                 "h": 2360
+        //     },
+        //     "background": {
+        //                 "color": '#09F'
+        //     }
+        // },
         "richquotes": {
             "todos" : true /*false by default*/
         }
