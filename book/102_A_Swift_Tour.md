@@ -218,7 +218,7 @@ secondForLoop
 
 以上例來說使用 `..` 迴圈總共執行的 `i` 分別為 i = 0, i = 1, i = 2, 如果您想使用的傳統寫法為 i <= 3, 那請您使用 `...` 
 
-## 函式與 Closures
+## 函式 Functions 與 Closures
 
 使用 `func` 來宣告函式。使用名稱和參數來呼叫函式。使用 `->` 於參數型別與名稱之後來指定函式回傳值。
 
@@ -335,7 +335,7 @@ sort([1, 5, 3, 12, 2]) { $0 > $1 }
 ~~~
 
 
-## 物件與類別
+## 物件 Object 與類別 Class
 
 我們可以使用 `class` 接著其命名來建立一個類別。類別中屬性的宣告就和宣告變數與常數相同，唯一的區別是其中的上下文。同樣地，方法與函式的宣告也相同。
 
@@ -499,7 +499,7 @@ let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
 let sideLength = optionalSquare?.sideLength
 ~~~
 
-## Enumerations 與 Structures
+## 列舉 Enumerations 與 結構 Structures
 
 使用 `enum` 來建立列舉(enumeration)。就如同類別與其他命名型別一樣，列舉也能包含方法。
 
@@ -614,10 +614,130 @@ case let .Error(error):
 
 ~~~
 練習
-為 ServerResponse 加上第三種情況給 switch 。
+為 ServerResponse 加上第三種 case 給 switch 。
 ~~~
 
 注意日出與日落時間是如何從伺服器取得成給 switch case 配對的值
 
 
-(待續)
+## 協議 Protocols 與 擴展 Extensions
+
+使用 `protocol` 來宣告協議 (protocol)。
+
+~~~
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust()
+}
+~~~
+
+類別、列舉與結構全都實作協議。
+
+~~~
+class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = "A very simple class."
+    var anotherProperty: Int = 69105
+    func adjust() {
+        simpleDescription += "  Now 100% adjusted."
+    }
+}
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+ 
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+}
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+~~~
+
+~~~
+練習
+請寫一個實作此協議的列舉。
+~~~
+
+請注意在上例中，我們使用 `mutating` 於來標示一個會修改結構的方法。在 SimpleClass 中我們卻不使用 `mutating` ，因為方法本來就會經常修改類別本身。
+
+使用 `extension` 來為已存在的類型擴展功能，例如像新的方法和屬性。您可使用 `extension` 來改寫在其他地方已宣告之型別，甚至是從 library 或 framework 所引用的。
+
+~~~
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+    return "The number \(self)"
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+7.simpleDescription
+~~~
+
+~~~
+練習
+幫 Double 型別寫一個 extension，使其擁有絕對值 (absoluteValue) 的屬性。
+~~~
+
+您可以使用 protocol 名稱如同其他型別的命名--例如，創造一個物件集合使其擁有不同的型別，但所有的物件都需遵循一份相同的 protocol。當您處理一個型別屬於 protocol 的值時，protocol 外的方法皆不可使用。
+
+~~~
+let protocolValue: ExampleProtocol = a
+protocolValue.simpleDescription
+// protocolValue.anotherProperty  // Uncomment to see the error
+~~~
+
+即使 protocolValue 於 runtime 的型別是 SimpleClass, 編譯器仍會把它當成 ExampleProtocol。這意味著你不能使用類別實作 protocol 之外的方法與屬性。
+
+## 泛型 Generics
+
+泛型寫法為在 `<>` 中加入函式或型別。
+
+~~~
+func repeat<ItemType>(item: ItemType, times: Int) -> ItemType[] {
+    var result = ItemType[]()
+    for i in 0..times {
+        result += item
+    }
+    return result
+}
+repeat("knock", 4)
+~~~
+
+您也可以為類別、列舉與結構加上泛型
+
+~~~
+// Reimplement the Swift standard library's optional type
+enum OptionalValue<T> {
+    case None
+    case Some(T)
+}
+var possibleInteger: OptionalValue<Int> = .None
+possibleInteger = .Some(100)
+~~~
+
+使用 `where` 於型別之後來限縮泛型--例如限定實作某個協議，限定兩種相同型名，限定類別繼承之某一父類別。
+
+~~~
+func anyCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Element: Equatable, T.GeneratorType.Element == U.GeneratorType.Element> (lhs: T, rhs: U) -> Bool {
+    for lhsItem in lhs {
+        for rhsItem in rhs {
+            if lhsItem == rhsItem {
+                return true
+            }
+        }
+    }
+    return false
+}
+anyCommonElements([1, 2, 3], [3])
+~~~
+
+~~~
+練習
+改寫 anyCommonelements 函式使其回傳之陣列包含兩序列的共同元素。
+~~~
+
+為了簡單起見，您可以忽略 `where` ，只需在冒號後面寫上協議或類別名稱。`<T: Equatable>` 與 `<T where T: Equatable>` 這兩種寫法是相同的。
