@@ -20,9 +20,9 @@ NOTE
 >為了更佳的體驗，請在 Xcode 中打開 Playgrounds。Playgrounds 可以讓您编辑程式碼的同時看到運行的結果。[Open Playground](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/GuidedTour.playground.zip)
 
 
-## 變數與常數
+## 簡易數值
 
-使用 `let` 宣告常數，`var` 則為宣告變數。在編譯時期並不需要有明確的值，但您只能為它賦值一次。也就是說您可以使用常數來宣告一個數值，並且在許多地方來使用它。
+使用 `let` 宣告常數，`var` 則為宣告變數。常數在編譯時期並不需要有明確的值，但您只能為它賦值一次。也就是說您可以使用常數來宣告一個數值，並且在許多地方來使用它。
 
 ~~~
 var myVariable = 42
@@ -30,7 +30,7 @@ myVariable = 50
 let myConstant = 42
 ~~~
 
-在賦值給常數與變數時，您必須給予相同的型別。然而，您並不用每次都有明確寫入型別，當您在宣告常數或變數時賦值，編譯器會自動判斷其型別。在上面的範例中，編譯器判斷 `myVariable` 是一個整數(integer), 因為它的初使值是整數。
+在賦值給常數與變數時，您必須給予其相同的型別。然而，您並不用每次都有明確寫入型別，當您在宣告常數或變數時賦值，編譯器會自動判斷其型別。在上面的範例中，編譯器判斷 `myVariable` 是一個整數(integer), 因為它的初使值是整數。
 
 如果初始值無法提供足夠的訊息(或沒有初使值)，那您必須在變數後加上冒號宣告其型別。
 
@@ -45,7 +45,7 @@ let explicitDouble: Double = 70
 宣告一個常數其型別為 Float 並給予初始值為 4。
 ~~~
 
-數值永遠不會隱含轉換成另一種型別。如果您需要轉型，請用強制轉型。
+數值永遠不會隱含轉換成另一種型別。如果您需要轉型，請給予明確的型別。
 
 ~~~
 let label = "The width is"
@@ -72,7 +72,7 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 使用 \() 來把一個浮點數轉換成字串，並且寫上包含某人名字的問候語
 ~~~
 
-使用中括號 [] 来來創建陣列與 Dictionary，並且在中括號裡使用 index 與 key 來存取其數值。
+使用中括號 `[]` 来建立陣列 (array) 與字典 (Dictionary)，並且在中括號裡使用 index 與 key 來存取其數值。
 
 ~~~
 var shoppingList = ["catfish", "water", "tulips", "blue paint"]
@@ -100,7 +100,7 @@ shoppingList = []   // Went shopping and bought everything.
 
 ## 流程控制
 
-使用 if 和 switch 語句來進行條件操作，for-in，for，while，do-while 語句則是用來操作迴圈。描述條件和迴圈的括號可以省略，但是整體語句的大括號則不可省略。
+使用 `if` 和 `switch` 語句來進行條件操作，`for-in`，`for`，`while`，`do-while` 語句則是用來操作迴圈。描述條件和迴圈的括號可以省略，但是整體語句的大括號則不可省略。
 
 ~~~
 let individualScores = [75, 43, 103, 87, 12]
