@@ -339,7 +339,7 @@ sort([1, 5, 3, 12, 2]) { $0 > $1 }
 
 我們可以使用 `class` 接著其命名來建立一個類別。類別中屬性的宣告就和宣告變數與常數相同，唯一的區別是其中的上下文。同樣地，方法與函式的宣告也相同。
 
-```cplus
+```c++
 class Shape {
     var numberOfSides = 0
     func simpleDescription() -> String {
@@ -355,11 +355,11 @@ class Shape {
 
 要創建一個類別的實體只需在類別名稱後面加上括號，並且使用 `.` 來存取實體的屬性與方法。
 
-~~~
+```c++
 var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
-~~~
+```
 
 此版本的 `Shape` 類別缺少了一些重要的東西：一個建構函式來初始化。這時我們可以使用 `init` 來初始化。
 
