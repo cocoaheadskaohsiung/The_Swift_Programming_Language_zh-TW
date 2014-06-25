@@ -7,7 +7,7 @@
 * [語言手冊](book/README)
    * [基本語法 (Dofi)](book/201_The_Basics.md)
    * [基本運算元 (Mikimoto)](book/202_Basic_Operators.md)
-   * [字串與字元](book/203_Strings_and_Characters.md)
+   * [字串與字元 (Evan)](book/203_Strings_and_Characters.md)
    * [Collection Types](book/204_Collection_Types.md)
    * [Control Flow](book/205_Control_Flow.md)
    * [Functions](book/206_Functions.md)

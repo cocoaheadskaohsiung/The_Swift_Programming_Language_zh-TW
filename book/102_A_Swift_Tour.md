@@ -24,21 +24,21 @@ NOTE
 
 使用 `let` 宣告常數，`var` 則為宣告變數。常數在編譯時期並不需要有明確的值，但您只能為它賦值一次。也就是說您可以使用常數來宣告一個數值，並且在許多地方來使用它。
 
-~~~
+```c
 var myVariable = 42
 myVariable = 50
 let myConstant = 42
-~~~
+```
 
 在賦值給常數與變數時，您必須給予其相同的型別。然而，您並不用每次都有明確寫入型別，當您在宣告常數或變數時賦值，編譯器會自動判斷其型別。在上面的範例中，編譯器判斷 `myVariable` 是一個整數(integer), 因為它的初使值是整數。
 
 如果初始值無法提供足夠的訊息(或沒有初使值)，那您必須在變數後加上冒號宣告其型別。
 
-~~~
+```c
 let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
-~~~
+```
 
 ~~~
 練習
@@ -47,11 +47,11 @@ let explicitDouble: Double = 70
 
 數值永遠不會隱含轉換成另一種型別。如果您需要轉型，請給予明確的型別。
 
-~~~
+```c
 let label = "The width is"
 let width = 94
 let widthLabel = label + String(width)
-~~~
+```
 
 ~~~
 練習
@@ -60,12 +60,12 @@ let widthLabel = label + String(width)
 
 有一更簡易的方式可把數值轉換成字串：把數值寫到小括號中，並在小括號前加上反斜線。例如：
 
-~~~
+```c
 let apples = 3
 let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
-~~~
+```
 
 ~~~
 練習
@@ -74,7 +74,7 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 
 使用中括號 `[]` 来建立陣列 (array) 與字典 (Dictionary)，並且在中括號裡使用 index 與 key 來存取其數值。
 
-~~~
+```c
 var shoppingList = ["catfish", "water", "tulips", "blue paint"]
 shoppingList[1] = "bottle of water"
 
@@ -83,26 +83,26 @@ var occupations = [
     "Kaylee": "Mechanic",
 ]
 occupations["Jayne"] = "Public Relations"
-~~~
+```
 
 請使用初使化語法來創建陣列與 Dictionary
 
-~~~
+```c
 let emptyArray = String[]()
 let emptyDictionary = Dictionary<String, Float>()
-~~~
+```
 
 如果型別可被判斷出來，您可使用 `[]` 和 `[:]` 來建立空陣列與空 Dictionary --就像您宣告變數或為函式傳參數的時候一樣
 
-~~~
+```c
 shoppingList = []   // Went shopping and bought everything.
-~~~
+```
 
 ## 流程控制
 
 使用 `if` 和 `switch` 語句來進行條件操作，`for-in`，`for`，`while`，`do-while` 語句則是用來操作迴圈。描述條件和迴圈的括號可以省略，但是整體語句的大括號則不可省略。
 
-~~~
+```c
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {
@@ -113,13 +113,13 @@ for score in individualScores {
     }
 }
 teamScore
-~~~
+```
 
 在 if 語句中，條件必須為布林表示(Bool)--這意味著像是 `if score { ... }` 的語句會造成錯誤，`score` 並不會隱含地與 0 來做比較。
 
 您可以一起使用 `if` 與 `let` 來處理空值的情況。此種變數為 Optional。一個 Optional 值可能代表了一個具體的數值或遺失值的 nil。我們需在型別之後加上 `?` 來標示此為 Optional 值。
 
-~~~
+```c
 var optionalString: String? = "Hello"
 optionalString == nil
  
@@ -128,7 +128,7 @@ var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
 }
-~~~
+```
 
 ~~~
 練習
@@ -139,7 +139,7 @@ if let name = optionalName {
 
 'switch' 可支援任何型式的資料以及各種比較式的操作--不限只有整數或測試兩數是否相等。
 
-~~~
+```c
 let vegetable = "red pepper"
 switch vegetable {
 case "celery":
@@ -151,7 +151,7 @@ case let x where x.hasSuffix("pepper"):
 default:
     let vegetableComment = "Everything tastes good in soup."
 }
-~~~
+```
 
 ~~~
 練習
@@ -162,7 +162,7 @@ default:
 
 你可以使用 `for-in` 來訪問 Dictionary 裡的每個項目，這需要兩個變數來代表 `key-value`。
 
-~~~
+```c
 let interestingNumbers = [
     "Prime": [2, 3, 5, 7, 11, 13],
     "Fibonacci": [1, 1, 2, 3, 5, 8],
@@ -177,7 +177,7 @@ for (kind, numbers) in interestingNumbers {
     }
 }
 largest
-~~~
+```
 
 ~~~
 練習
@@ -186,7 +186,7 @@ largest
 
 使用 `while` 來反覆執行一段程式直到條件不滿足為止。迴圈的條件可以寫在開頭也可以放到結尾，寫在結尾的情形是為了確保迴圈至少會被執行一次。
 
-~~~
+```c
 var n = 2
 while n < 100 {
     n = n * 2
@@ -198,11 +198,11 @@ do {
     m = m * 2
 } while m < 100
 m
-~~~
+```
 
 你可以在迴圈使用 `..` 來表示範圍，也可以使用傳統寫法。以下範例的兩種迴圈是一樣的： 
 
-~~~
+```c
 var firstForLoop = 0
 for i in 0..3 {
     firstForLoop += i
@@ -214,7 +214,7 @@ for var i = 0; i < 3; ++i {
     secondForLoop += 1
 }
 secondForLoop
-~~~
+```
 
 以上例來說使用 `..` 迴圈總共執行的 `i` 分別為 i = 0, i = 1, i = 2, 如果您想使用的傳統寫法為 i <= 3, 那請您使用 `...` 
 
@@ -222,12 +222,12 @@ secondForLoop
 
 使用 `func` 來宣告函式。使用名稱和參數來呼叫函式。使用 `->` 於參數型別與名稱之後來指定函式回傳值。
 
-~~~
+```c
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
 greet("Bob", "Tuesday")
-~~~
+```
 
 ~~~
 練習
@@ -236,16 +236,16 @@ greet("Bob", "Tuesday")
 
 swift 函式也能支援同時有多個回傳值
 
-~~~
+```c
 func getGasPrices() -> (Double, Double, Double) {
     return (3.59, 3.69, 3.79)
 }
 getGasPrices()
-~~~
+```
 
 函式也可使用陣列方式夾帶多參數。
 
-~~~
+```c
 func sumOf(numbers: Int...) -> Int {
     var sum = 0
     for number in numbers {
@@ -255,7 +255,7 @@ func sumOf(numbers: Int...) -> Int {
 }
 sumOf()
 sumOf(42, 597, 12)
-~~~
+```
 
 ~~~
 練習
@@ -264,7 +264,7 @@ sumOf(42, 597, 12)
 
 swift 也支援巢狀寫法(nested function)。巢狀函式可以存取外部函式的變數。你可以使用巢狀函式來重構一個過長或複雜的函式。
 
-~~~
+```c
 func returnFifteen() -> Int {
     var y = 10
     func add() {
@@ -274,11 +274,11 @@ func returnFifteen() -> Int {
     return y
 }
 returnFifteen()
-~~~
+```
 
 函式屬於第一級的類別，意味著函式也可以被當作另一個函式的回傳值。
 
-~~~
+```c
 func makeIncrementer() -> (Int -> Int) {
     func addOne(number: Int) -> Int {
         return 1 + number
@@ -287,11 +287,11 @@ func makeIncrementer() -> (Int -> Int) {
 }
 var increment = makeIncrementer()
 increment(7)
-~~~
+```
 
 函式也可以當作參數傳給另一個函式
 
-~~~
+```c
 func hasAnyMatches(list: Int[], condition: Int -> Bool) -> Bool {
     for item in list {
         if condition(item) {
@@ -305,17 +305,17 @@ func lessThanTen(number: Int) -> Bool {
 }
 var numbers = [20, 19, 7, 12]
 hasAnyMatches(numbers, lessThanTen)
-~~~
+```
 
 函式其實是一種特殊的 closures。你可以使用大括號 `{}` 來創建出一個沒有名稱的 closure 。使用 `in` 於函式主體與回傳值之間。
 
-~~~
+```c
 numbers.map({
     (number: Int) -> Int in
     let result = 3 * number
     return result
     })
-~~~
+```
 
 ~~~
 練習
@@ -324,29 +324,29 @@ numbers.map({
 
 有很多種更簡易的方式可用來建立 closures。當一個 closure 的型別為已知時，好比像委派的 callback，你可以忽略其參數型別或回傳值型別。單一語句的 closures 會將其值直接回傳。
 
-~~~
+```c
 numbers.map({ number in 3 * number })
-~~~
+```
 
 你可以透過參數位置而非參數名稱來引用參數--這個方法使用於簡短的 clousers 會很實用。當一個 closure 作為最後一個參數傳給函式時，可以直接接在函式的括號之後。
 
-~~~
+```c
 sort([1, 5, 3, 12, 2]) { $0 > $1 }
-~~~
+```
 
 
 ## 物件 Object 與類別 Class
 
 我們可以使用 `class` 接著其命名來建立一個類別。類別中屬性的宣告就和宣告變數與常數相同，唯一的區別是其中的上下文。同樣地，方法與函式的宣告也相同。
 
-~~~
+```cplus
 class Shape {
     var numberOfSides = 0
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
     }
 }
-~~~
+```
 
 ~~~
 練習
