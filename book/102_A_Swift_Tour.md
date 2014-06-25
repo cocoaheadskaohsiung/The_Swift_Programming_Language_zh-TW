@@ -2,7 +2,7 @@
 
 學習一個新程式語言大家做常寫的第一個程式應該就是在螢幕上印出 `Hello, World`。
 在 Swift 中只需要一行程式碼：
-```c
+```c++
 println("Hello, world")
 ```
 如果您用過 C 或 Objective-C 進行程式開發，您應該會覺得上述的 Swift 語法相當熟悉，上述的範例中這一行程式碼已經是一個完整可獨立執行的程式。
@@ -24,7 +24,7 @@ NOTE
 
 使用 `let` 宣告常數，`var` 則為宣告變數。常數在編譯時期並不需要有明確的值，但您只能為它賦值一次。也就是說您可以使用常數來宣告一個數值，並且在許多地方來使用它。
 
-```c
+```c++
 var myVariable = 42
 myVariable = 50
 let myConstant = 42
@@ -34,7 +34,7 @@ let myConstant = 42
 
 如果初始值無法提供足夠的訊息(或沒有初使值)，那您必須在變數後加上冒號宣告其型別。
 
-```c
+```c++
 let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
@@ -47,7 +47,7 @@ let explicitDouble: Double = 70
 
 數值永遠不會隱含轉換成另一種型別。如果您需要轉型，請給予明確的型別。
 
-```c
+```c++
 let label = "The width is"
 let width = 94
 let widthLabel = label + String(width)
@@ -60,7 +60,7 @@ let widthLabel = label + String(width)
 
 有一更簡易的方式可把數值轉換成字串：把數值寫到小括號中，並在小括號前加上反斜線。例如：
 
-```c
+```c++
 let apples = 3
 let oranges = 5
 let appleSummary = "I have \(apples) apples."
@@ -74,7 +74,7 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 
 使用中括號 `[]` 来建立陣列 (array) 與字典 (Dictionary)，並且在中括號裡使用 index 與 key 來存取其數值。
 
-```c
+```c++
 var shoppingList = ["catfish", "water", "tulips", "blue paint"]
 shoppingList[1] = "bottle of water"
 
@@ -87,14 +87,14 @@ occupations["Jayne"] = "Public Relations"
 
 請使用初使化語法來創建陣列與 Dictionary
 
-```c
+```c++
 let emptyArray = String[]()
 let emptyDictionary = Dictionary<String, Float>()
 ```
 
 如果型別可被判斷出來，您可使用 `[]` 和 `[:]` 來建立空陣列與空 Dictionary --就像您宣告變數或為函式傳參數的時候一樣
 
-```c
+```c++
 shoppingList = []   // Went shopping and bought everything.
 ```
 
@@ -102,7 +102,7 @@ shoppingList = []   // Went shopping and bought everything.
 
 使用 `if` 和 `switch` 語句來進行條件操作，`for-in`，`for`，`while`，`do-while` 語句則是用來操作迴圈。描述條件和迴圈的括號可以省略，但是整體語句的大括號則不可省略。
 
-```c
+```c++
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {
@@ -119,7 +119,7 @@ teamScore
 
 您可以一起使用 `if` 與 `let` 來處理空值的情況。此種變數為 Optional。一個 Optional 值可能代表了一個具體的數值或遺失值的 nil。我們需在型別之後加上 `?` 來標示此為 Optional 值。
 
-```c
+```c++
 var optionalString: String? = "Hello"
 optionalString == nil
  
@@ -139,7 +139,7 @@ if let name = optionalName {
 
 'switch' 可支援任何型式的資料以及各種比較式的操作--不限只有整數或測試兩數是否相等。
 
-```c
+```c++
 let vegetable = "red pepper"
 switch vegetable {
 case "celery":
@@ -162,7 +162,7 @@ default:
 
 你可以使用 `for-in` 來訪問 Dictionary 裡的每個項目，這需要兩個變數來代表 `key-value`。
 
-```c
+```c++
 let interestingNumbers = [
     "Prime": [2, 3, 5, 7, 11, 13],
     "Fibonacci": [1, 1, 2, 3, 5, 8],
@@ -186,7 +186,7 @@ largest
 
 使用 `while` 來反覆執行一段程式直到條件不滿足為止。迴圈的條件可以寫在開頭也可以放到結尾，寫在結尾的情形是為了確保迴圈至少會被執行一次。
 
-```c
+```c++
 var n = 2
 while n < 100 {
     n = n * 2
@@ -202,7 +202,7 @@ m
 
 你可以在迴圈使用 `..` 來表示範圍，也可以使用傳統寫法。以下範例的兩種迴圈是一樣的： 
 
-```c
+```c++
 var firstForLoop = 0
 for i in 0..3 {
     firstForLoop += i
@@ -222,7 +222,7 @@ secondForLoop
 
 使用 `func` 來宣告函式。使用名稱和參數來呼叫函式。使用 `->` 於參數型別與名稱之後來指定函式回傳值。
 
-```c
+```c++
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
@@ -236,7 +236,7 @@ greet("Bob", "Tuesday")
 
 swift 函式也能支援同時有多個回傳值
 
-```c
+```c++
 func getGasPrices() -> (Double, Double, Double) {
     return (3.59, 3.69, 3.79)
 }
@@ -245,7 +245,7 @@ getGasPrices()
 
 函式也可使用陣列方式夾帶多參數。
 
-```c
+```c++
 func sumOf(numbers: Int...) -> Int {
     var sum = 0
     for number in numbers {
@@ -264,7 +264,7 @@ sumOf(42, 597, 12)
 
 swift 也支援巢狀寫法(nested function)。巢狀函式可以存取外部函式的變數。你可以使用巢狀函式來重構一個過長或複雜的函式。
 
-```c
+```c++
 func returnFifteen() -> Int {
     var y = 10
     func add() {
@@ -278,7 +278,7 @@ returnFifteen()
 
 函式屬於第一級的類別，意味著函式也可以被當作另一個函式的回傳值。
 
-```c
+```c++
 func makeIncrementer() -> (Int -> Int) {
     func addOne(number: Int) -> Int {
         return 1 + number
@@ -291,7 +291,7 @@ increment(7)
 
 函式也可以當作參數傳給另一個函式
 
-```c
+```c++
 func hasAnyMatches(list: Int[], condition: Int -> Bool) -> Bool {
     for item in list {
         if condition(item) {
@@ -309,7 +309,7 @@ hasAnyMatches(numbers, lessThanTen)
 
 函式其實是一種特殊的 closures。你可以使用大括號 `{}` 來創建出一個沒有名稱的 closure 。使用 `in` 於函式主體與回傳值之間。
 
-```c
+```c++
 numbers.map({
     (number: Int) -> Int in
     let result = 3 * number
@@ -324,13 +324,13 @@ numbers.map({
 
 有很多種更簡易的方式可用來建立 closures。當一個 closure 的型別為已知時，好比像委派的 callback，你可以忽略其參數型別或回傳值型別。單一語句的 closures 會將其值直接回傳。
 
-```c
+```c++
 numbers.map({ number in 3 * number })
 ```
 
 你可以透過參數位置而非參數名稱來引用參數--這個方法使用於簡短的 clousers 會很實用。當一個 closure 作為最後一個參數傳給函式時，可以直接接在函式的括號之後。
 
-```c
+```c++
 sort([1, 5, 3, 12, 2]) { $0 > $1 }
 ```
 
@@ -363,7 +363,7 @@ var shapeDescription = shape.simpleDescription()
 
 此版本的 `Shape` 類別缺少了一些重要的東西：一個建構函式來初始化。這時我們可以使用 `init` 來初始化。
 
-~~~
+```c++
 class NamedShape {
     var numberOfSides: Int = 0
     var name: String
@@ -376,7 +376,7 @@ class NamedShape {
         return "A shape with \(numberOfSides) sides."
     }
 }
-~~~
+```
 
 請注意 `self` 如何被用來區分建構函式內的屬性與參數。當您建立一個實體並要傳入參數時，請使用傳參數給函式的方式一樣傳給建構函式。每個屬性不論在宣告(例如 numberOfSides )或初始化(例如 name )時都必需要賦值。 
 
@@ -386,7 +386,7 @@ class NamedShape {
 
 子類別如果要覆寫父類方法時，需使用 `override` 作為標記，如果未加上就覆寫父類別方法，編譯器將會回傳錯誤。編譯器也會檢查 `override` 的方法是否確實有定義於在父類別中。
 
-~~~
+```c++
 class Square: NamedShape {
     var sideLength: Double
     
@@ -407,7 +407,7 @@ class Square: NamedShape {
 let test = Square(sideLength: 5.2, name: "my test square")
 test.area()
 test.simpleDescription()
-~~~
+```
 
 ~~~
 練習
@@ -416,7 +416,7 @@ test.simpleDescription()
 
 另外屬性有簡單的存取方式，稱為 `getter` 與 `setter`
 
-~~~
+```c++
 class EquilateralTriangle: NamedShape {
     var sideLength: Double = 0.0
     
@@ -443,7 +443,7 @@ var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
 triangle.perimeter
 triangle.perimeter = 9.9
 triangle.sideLength
-~~~
+```
 
 在 `setter` 中，新值的名稱自動被稱為 `newValue`，您可以在之後給予明確的名稱。
 
@@ -455,7 +455,7 @@ triangle.sideLength
 
 如果您不需要計算屬性，但仍需要在執行程前碼前與設置新值之後，請使用 `willSet` 與 `didSet`。例如下例中的 square 的 sideLength 會與 triangle 的 sideLength 會保持一致。
 
-~~~
+```c++
 class TriangleAndSquare {
     var triangle: EquilateralTriangle {
     willSet {
@@ -477,11 +477,11 @@ triangleAndSquare.square.sideLength
 triangleAndSquare.triangle.sideLength
 triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
 triangleAndSquare.triangle.sideLength
-~~~
+```
 
 類別中的方法與函式有一個重要的分別。函式的參數名稱只在函式的內部使用，但方法的參數名稱會使用於調用方法時(第一個參數除外)。在預設情況中，方法的參數名稱和它在方法內部的名稱一樣，不過在使用於方法內部時，您也可以為其定義第二個名稱。
 
-~~~
+```c++
 class Counter {
     var count: Int = 0
     func incrementBy(amount: Int, numberOfTimes times: Int) {
@@ -490,20 +490,20 @@ class Counter {
 }
 var counter = Counter()
 counter.incrementBy(2, numberOfTimes: 7)
-~~~
+```
 
 當處理 optional 值時，您可以用 `?` 在方法、屬性與子腳本前。如果 `?` 之前是 `nil`，在 `?` 之後的東西都會被忽略，而且整段式子都會回傳 `nil`。否則，所有的 optional 值都會被解開，在 `?` 之後的都會被執行。在這兩種情況下，整個表達式都會是個 optional 值。
 
-~~~
+```c++
 let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
 let sideLength = optionalSquare?.sideLength
-~~~
+```
 
 ## 列舉 Enumerations 與 結構 Structures
 
 使用 `enum` 來建立列舉(enumeration)。就如同類別與其他命名型別一樣，列舉也能包含方法。
 
-~~~
+```c++
 enum Rank: Int {
     case Ace = 1
     case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
@@ -525,7 +525,7 @@ enum Rank: Int {
 }
 let ace = Rank.Ace
 let aceRawValue = ace.toRaw()
-~~~
+```
 
 ~~~
 練習
@@ -536,15 +536,15 @@ let aceRawValue = ace.toRaw()
 
 始用 `toRaw` 和 `fromRaw` 函式在原始值與列舉值間進行轉換。
 
-~~~
+```c++
 if let convertedRank = Rank.fromRaw(3) {
     let threeDescription = convertedRank.simpleDescription()
 }
-~~~
+```
 
 列舉的成員值是實際值，並不是原始值的另一種表示。事實上，如果原始值是無義意的，您就不需要另外提供。
 
-~~~
+```c++
 enum Suit {
     case Spades, Hearts, Diamonds, Clubs
     func simpleDescription() -> String {
@@ -562,7 +562,7 @@ enum Suit {
 }
 let hearts = Suit.Hearts
 let heartsDescription = hearts.simpleDescription()
-~~~
+```
 
 ~~~
 練習
@@ -573,7 +573,7 @@ let heartsDescription = hearts.simpleDescription()
 
 使用 `struct` 來建立結構(structure)。Structure 支援許多與類別相同的行為，包含方法與初使化。兩者有一個最大的不同點在於 structure 是傳值，類別是傳的是參考。
 
-~~~
+```c++
 struct Card {
     var rank: Rank
     var suit: Suit
@@ -584,7 +584,7 @@ struct Card {
 }
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
-~~~
+```
 
 ~~~
 練習
@@ -595,7 +595,7 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 
 例如，考慮到從伺服器取得日出與日落時間，伺服器會回應正常或錯誤訊息。
 
-~~~
+```c++
 enum ServerResponse {
     case Result(String, String)
     case Error(String)
@@ -610,7 +610,7 @@ case let .Result(sunrise, sunset):
 case let .Error(error):
     let serverResponse = "Failure...  \(error)"
 }
-~~~
+```
 
 ~~~
 練習
@@ -624,16 +624,16 @@ case let .Error(error):
 
 使用 `protocol` 來宣告協議 (protocol)。
 
-~~~
+```c++
 protocol ExampleProtocol {
     var simpleDescription: String { get }
     mutating func adjust()
 }
-~~~
+```
 
 類別、列舉與結構全都實作協議。
 
-~~~
+```c++
 class SimpleClass: ExampleProtocol {
     var simpleDescription: String = "A very simple class."
     var anotherProperty: Int = 69105
@@ -654,7 +654,7 @@ struct SimpleStructure: ExampleProtocol {
 var b = SimpleStructure()
 b.adjust()
 let bDescription = b.simpleDescription
-~~~
+```
 
 ~~~
 練習
@@ -665,7 +665,7 @@ let bDescription = b.simpleDescription
 
 使用 `extension` 來為已存在的類型擴展功能，例如像新的方法和屬性。您可使用 `extension` 來改寫在其他地方已宣告之型別，甚至是從 library 或 framework 所引用的。
 
-~~~
+```c++
 extension Int: ExampleProtocol {
     var simpleDescription: String {
     return "The number \(self)"
@@ -675,7 +675,7 @@ extension Int: ExampleProtocol {
     }
 }
 7.simpleDescription
-~~~
+```
 
 ~~~
 練習
@@ -684,11 +684,11 @@ extension Int: ExampleProtocol {
 
 您可以使用 protocol 名稱如同其他型別的命名--例如，創造一個物件集合使其擁有不同的型別，但所有的物件都需遵循一份相同的 protocol。當您處理一個型別屬於 protocol 的值時，protocol 外的方法皆不可使用。
 
-~~~
+```c++
 let protocolValue: ExampleProtocol = a
 protocolValue.simpleDescription
 // protocolValue.anotherProperty  // Uncomment to see the error
-~~~
+```
 
 即使 protocolValue 於 runtime 的型別是 SimpleClass, 編譯器仍會把它當成 ExampleProtocol。這意味著你不能使用類別實作 protocol 之外的方法與屬性。
 
@@ -696,7 +696,7 @@ protocolValue.simpleDescription
 
 泛型寫法為在 `<>` 中加入函式或型別。
 
-~~~
+```c++
 func repeat<ItemType>(item: ItemType, times: Int) -> ItemType[] {
     var result = ItemType[]()
     for i in 0..times {
@@ -705,11 +705,11 @@ func repeat<ItemType>(item: ItemType, times: Int) -> ItemType[] {
     return result
 }
 repeat("knock", 4)
-~~~
+```
 
 您也可以為類別、列舉與結構加上泛型
 
-~~~
+```c++
 // Reimplement the Swift standard library's optional type
 enum OptionalValue<T> {
     case None
@@ -717,11 +717,11 @@ enum OptionalValue<T> {
 }
 var possibleInteger: OptionalValue<Int> = .None
 possibleInteger = .Some(100)
-~~~
+```
 
 使用 `where` 於型別之後來限縮泛型--例如限定實作某個協議，限定兩種相同型名，限定類別繼承之某一父類別。
 
-~~~
+```c++
 func anyCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Element: Equatable, T.GeneratorType.Element == U.GeneratorType.Element> (lhs: T, rhs: U) -> Bool {
     for lhsItem in lhs {
         for rhsItem in rhs {
@@ -733,7 +733,7 @@ func anyCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Ele
     return false
 }
 anyCommonElements([1, 2, 3], [3])
-~~~
+```
 
 ~~~
 練習
