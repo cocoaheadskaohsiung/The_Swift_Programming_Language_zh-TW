@@ -17,7 +17,7 @@
    * [Properties](book/210_Properties.md)
    * [Methods](book/211_Methods.md)
    * [Subscripts](book/212_Subscripts.md)
-   * [Inheritance](book/README)
+   * [Inheritance](book/213_Inheritance.md)
    * [Initialization](book/README)
    * [Deinitialization](book/README)
    * [Automatic Reference Counting](book/README)
