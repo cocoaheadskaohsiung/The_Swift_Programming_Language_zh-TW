@@ -22,8 +22,10 @@ Every function has a *function name*, which describes the task that the function
 
 每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數". 注意:傳入引數的順序必須要跟函式中的參數順序一致才可以。
 
-
 The function in the example below is called `greetingForPerson`, because that’s what it does—it takes a person’s name as input and returns a greeting for that person. To accomplish this, you define one input parameter—a `String` value called `personName`—and a return type of `String`, which will contain a greeting for that person:
+
+以下的例子是叫做 `greetingForPerson`的函式，它做的事情是傳進來的人名加上歡迎詞然後就回傳給呼叫者。 為了達到這個目的，你需要定義一個參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別同樣也是字串，這個回傳值包含人名和歡迎詞。
+
 
 ```swift
 func sayHello(personName: String) -> String {
