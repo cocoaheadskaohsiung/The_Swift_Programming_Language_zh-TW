@@ -10,7 +10,7 @@
    * [字串與字元 (Evan)](book/203_Strings_and_Characters.md)
    * [Collection Types](book/204_Collection_Types.md)
    * [Control Flow](book/205_Control_Flow.md)
-   * [Functions](book/206_Functions.md)
+   * [Functions (Hank Hsiao)](book/206_Functions.md)
    * [Closures](book/207_Closures.md)
    * [Enumerations](book/208_Enumerations.md)
    * [Classes and Structures](book/209_Classes_and_Structures.md)

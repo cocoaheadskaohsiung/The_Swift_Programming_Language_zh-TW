@@ -14,6 +14,7 @@ The Swift Programming Language 正體中文版
 - Dofi
 - Evan
 - FrankWu
+- Hank Hsiao
 - Mikimoto
 - Marcus
 - HankH
