@@ -1,18 +1,31 @@
-# Functions
+函式(Functions)
 ---
 *Functions* are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
 
+*Functions*（函式）本身就是用來執行特定功能的程式碼。 每個*FUNCTION*都會給予唯一的命名，在需要的時候，我們透過這個名字來"呼叫"它。 
+
 Swift’s unified function syntax is flexible enough to express anything from a simple C-style function with no parameter names to a complex Objective-C-style method with local and external parameter names for each parameter. Parameters can provide default values to simplify function calls and can be passed as in-out parameters, which modify a passed variable once the function has completed its execution.
+
+Swift unified函式語法具有相當程度的彈性。簡單的像沒有參數的C語言函數，複雜的像具有內部變數和外部變數參數的Object-C函數都可以適用。參數本身有預設值用來簡化函式的呼叫，同時也可以當作傳入參數(pass in)或回傳參數(pass out)使用。 也就是說，當函式結束之後，參數值是會被改變的。
 
 Every function in Swift has a type, consisting of the function’s parameter types and return type. You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.
 
-## Defining and Calling Functions##
+Swift中的函式型別是由函式的參數型別和回傳型別所構成的。你可以把這樣的組合當作是一種變數型別，這樣做的好處在於我們把函式當作是普通的參數，可以把函式都做參數傳給其他函式，也可以把函式當作回傳值使用。 Swift函式也支援內嵌函式的寫法，函式的主體可以寫在另一個函式裡面，提供一種封裝的實作方式。 
+
+函式的定義與呼叫  (## Defining and Calling Functions##)
 
 When you define a function, you can optionally define one or more named, typed values that the function takes as input (known as *parameters*), and/or a type of value that the function will pass back as output when it is done (known as its *return type*).
 
+當你要定義函數的時候，你也許要定義一個或多個變數當作是函式的參數，也需要定義回傳值的型別。
+
 Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as *arguments*) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.
 
+每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數". 注意:傳入引數的順序必須要跟函式中的參數順序一致才可以。
+
 The function in the example below is called `greetingForPerson`, because that’s what it does—it takes a person’s name as input and returns a greeting for that person. To accomplish this, you define one input parameter—a `String` value called `personName`—and a return type of `String`, which will contain a greeting for that person:
+
+以下的例子是叫做 `greetingForPerson`的函式，它做的事情是傳進來的人名加上歡迎詞然後就回傳給呼叫者。 為了達到這個目的，你需要定義一個參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別同樣也是字串，這個回傳值包含人名和歡迎詞。
+
 
 ```swift
 func sayHello(personName: String) -> String {
@@ -23,7 +36,12 @@ func sayHello(personName: String) -> String {
 
 All of this information is rolled up into the function’s *definition*, which is prefixed with the `func` keyword. You indicate the function’s return type with the *return arrow* `->` (a hyphen followed by a right angle bracket), which is followed by the name of the type to return.
 
+函式的定義就是由這些資訊組合的，其中`func`是定義函式的關鍵字。函式的回傳型別則是透過"箭頭"來表達 `->` (一個連字號和右箭頭的組合)，在箭頭後面填的是回傳值的型別定義。
+
+
 The definition describes what the function does, what it expects to receive, and what it returns when it is done. The definition makes it easy for the function to be called elsewhere in your code in a clear and unambiguous way:
+
+這個定義描述了 1)函式的用途 2)函式的預期輸入，以及函式結束的回傳值。這種定義的方式讓我們在程式碼中的其他位置呼叫函式變得簡單而且清楚。
 
 ```swift
 println(sayHello("Anna"))
@@ -33,6 +51,8 @@ println(sayHello("Brian"))
 ```
 
 You call the `sayHello` function by passing it a `String` argument value in parentheses, such as `sayHello("Anna")`. Because the function returns a `String` value, `sayHello` can be wrapped in a call to the `println` function to print that string and see its return value, as shown above.
+
+你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`.  
 
 The body of the `sayHello` function starts by defining a new `String` constant called `greeting` and setting it to a simple greeting message for `personName`. This greeting is then passed back out of the function using the `return` keyword. As soon as `return greeting` is called, the function finishes its execution and returns the current value of `greeting`.
 

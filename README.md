@@ -16,6 +16,7 @@ The Swift Programming Language 正體中文版
 - FrankWu
 - Mikimoto
 - Marcus
+- HankH
 
 ## 我想協助翻譯 ##
 ---
