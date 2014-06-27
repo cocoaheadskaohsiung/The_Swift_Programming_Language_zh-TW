@@ -16,7 +16,7 @@ Swift中的函式型別是由函式的參數型別和回傳型別所構成的。
 
 When you define a function, you can optionally define one or more named, typed values that the function takes as input (known as *parameters*), and/or a type of value that the function will pass back as output when it is done (known as its *return type*).
 
-當你要定義函數的時候，你可能也需要定義一個或多個變數當作是函式的參數，也需要定義回傳值的型別。
+當你要定義函數的時候，你也許要定義一個或多個變數當作是函式的參數，也需要定義回傳值的型別。
 
 Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as *arguments*) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.
 
@@ -36,7 +36,12 @@ func sayHello(personName: String) -> String {
 
 All of this information is rolled up into the function’s *definition*, which is prefixed with the `func` keyword. You indicate the function’s return type with the *return arrow* `->` (a hyphen followed by a right angle bracket), which is followed by the name of the type to return.
 
+函式的定義就是由這些資訊組合的，其中`func`是定義函式的關鍵字。函式的回傳型別則是透過"箭頭"來表達 `->` (一個連字號和右箭頭的組合)，在箭頭後面填的是回傳值的型別定義。
+
+
 The definition describes what the function does, what it expects to receive, and what it returns when it is done. The definition makes it easy for the function to be called elsewhere in your code in a clear and unambiguous way:
+
+這個定義描述了 1)函式的用途 2)函式的預期輸入，以及函式結束的回傳值。這種定義的方式讓我們在程式碼中的其他位置呼叫函式變得簡單而且清楚。
 
 ```swift
 println(sayHello("Anna"))
@@ -46,6 +51,8 @@ println(sayHello("Brian"))
 ```
 
 You call the `sayHello` function by passing it a `String` argument value in parentheses, such as `sayHello("Anna")`. Because the function returns a `String` value, `sayHello` can be wrapped in a call to the `println` function to print that string and see its return value, as shown above.
+
+你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`.  
 
 The body of the `sayHello` function starts by defining a new `String` constant called `greeting` and setting it to a simple greeting message for `personName`. This greeting is then passed back out of the function using the `return` keyword. As soon as `return greeting` is called, the function finishes its execution and returns the current value of `greeting`.
 
