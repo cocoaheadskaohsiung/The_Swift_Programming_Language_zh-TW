@@ -12,8 +12,10 @@ The Swift Programming Language 正體中文版
 感謝下面人員參與本翻譯計畫：(依照暱稱第一個英文字母排序)
 - Aaron
 - Dofi
+- DDT
 - Evan
 - FrankWu
+- Hank Hsiao
 - Mikimoto
 - Marcus
 - HankH
