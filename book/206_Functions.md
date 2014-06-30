@@ -2,11 +2,11 @@
 ---
 *Functions* are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
 
-*Functions*（函式）本身就是用來執行特定功能的程式碼。 每個*FUNCTION*都會給予唯一的命名，在需要的時候，我們透過這個名字來"呼叫"它。 
+*Functions*（函式）本身就是用來執行特定功能的程式碼。每個*FUNCTION*都會給予唯一的命名，在需要的時候，我們透過這個名字來"呼叫"它。 
 
 Swift’s unified function syntax is flexible enough to express anything from a simple C-style function with no parameter names to a complex Objective-C-style method with local and external parameter names for each parameter. Parameters can provide default values to simplify function calls and can be passed as in-out parameters, which modify a passed variable once the function has completed its execution.
 
-Swift unified函式語法具有相當程度的彈性。簡單的像沒有參數的C語言函數，複雜的像具有內部變數和外部變數參數的Object-C函數都可以適用。參數本身有預設值用來簡化函式的呼叫，同時也可以當作傳入參數(pass in)或回傳參數(pass out)使用。 也就是說，當函式結束之後，參數值是會被改變的。
+Swift unified函式語法具有相當程度的彈性。簡單的像沒有參數的C語言函數，複雜的像具有內部變數和外部變數參數的Object-C函數都可以適用。參數本身有預設值用來簡化函式的呼叫，同時也可以當作傳入參數（pass in）或回傳參數（pass out）使用。 也就是說，當函式結束之後，參數值是會被改變的。
 
 Every function in Swift has a type, consisting of the function’s parameter types and return type. You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.
 
@@ -20,11 +20,11 @@ When you define a function, you can optionally define one or more named, typed v
 
 Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as *arguments*) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.
 
-每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數". 注意:傳入引數的順序必須要跟函式中的參數順序一致才可以。
+每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數"。注意：傳入引數的順序必須要跟函式中的參數順序一致才可以。
 
 The function in the example below is called `greetingForPerson`, because that’s what it does—it takes a person’s name as input and returns a greeting for that person. To accomplish this, you define one input parameter—a `String` value called `personName`—and a return type of `String`, which will contain a greeting for that person:
 
-以下的例子是叫做 `greetingForPerson`的函式，它做的事情是傳進來的人名加上歡迎詞然後就回傳給呼叫者。 為了達到這個目的，你需要定義一個參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別同樣也是字串，這個回傳值包含人名和歡迎詞。
+以下的例子是叫做 `greetingForPerson`的函式，它做的事情是把傳進來的人名加上歡迎詞然後回傳給呼叫者。為了這個目的，你需要定義一個傳入參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別是字串，回傳值包含人名和歡迎詞。
 
 
 ```swift
@@ -52,9 +52,11 @@ println(sayHello("Brian"))
 
 You call the `sayHello` function by passing it a `String` argument value in parentheses, such as `sayHello("Anna")`. Because the function returns a `String` value, `sayHello` can be wrapped in a call to the `println` function to print that string and see its return value, as shown above.
 
-你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`.  
+你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`。由於 `sayHello` 是回傳字串型別的資料，它也可以直接內嵌在  `println` 函式中。結果如上，螢幕會上印出 `sayHello` 的回傳字串。
 
 The body of the `sayHello` function starts by defining a new `String` constant called `greeting` and setting it to a simple greeting message for `personName`. This greeting is then passed back out of the function using the `return` keyword. As soon as `return greeting` is called, the function finishes its execution and returns the current value of `greeting`.
+
+`sayHello` 的函式主體是定義一個字串變數 `greeting` 開始，同時把傳遞進來的 `personName` 加上一句歡迎詞設定給這個 `greeting` 這個變數。我們藉由 `return` 這個關鍵字把設定過的 `greeting` 變數值回傳給呼叫者。也就是說，當 `return greeting` 被執行，這個函式就會結束執行並且回傳`greeting`目前的值。
 
 You can call the `sayHello` function multiple times with different input values. The example above shows what happens if it is called with an input value of `"Anna"`, and an input value of `"Brian"`. The function returns a tailored greeting in each case.
 
