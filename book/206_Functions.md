@@ -20,7 +20,7 @@ When you define a function, you can optionally define one or more named, typed v
 
 Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as *arguments*) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.
 
-每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數"。注意：傳入引數的順序必須要跟函式中的參數順序一致才可以。
+每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的“引數”。注意：傳入引數的順序必須要跟函式中的參數順序一致才可以。
 
 The function in the example below is called `greetingForPerson`, because that’s what it does—it takes a person’s name as input and returns a greeting for that person. To accomplish this, you define one input parameter—a `String` value called `personName`—and a return type of `String`, which will contain a greeting for that person:
 
@@ -60,7 +60,10 @@ The body of the `sayHello` function starts by defining a new `String` constant c
 
 You can call the `sayHello` function multiple times with different input values. The example above shows what happens if it is called with an input value of `"Anna"`, and an input value of `"Brian"`. The function returns a tailored greeting in each case.
 
+每次呼叫 `sayHello` 函式都可以傳入不同的參數。以上的例子說明當函式的參數分別傳入 `"Anna"` 和 `"Brian"` 會發生什麼事。
+
 To simplify the body of this function, combine the message creation and the return statement into one line:
+如果需要簡化函式主體的長度，我們可以把回傳值跟預先建立好的變數合併成一行，例子如下：
 
 ```swift
 func sayHelloAgain(personName: String) -> String {
@@ -70,16 +73,19 @@ println(sayHelloAgain("Anna"))
 // prints "Hello again, Anna!"
 ```
 
-## Function Parameters and Return Values##
+函式的參數和回傳值（## Function Parameters and Return Values##）
 
 Function parameters and return values are extremely flexible in Swift. You can define anything from a simple utility function with a single unnamed parameter to a complex function with expressive parameter names and different parameter options.
 
-### Multiple Input Parameters###
+在Swift中，函式的參數和回傳值是相當有彈性的。從只有一個未命名參數的單一功能函式，到複雜功能函式中具有表達意義的參數名以及不同選項的參數，這些都是你可以定義的。
+
+多個傳入參數（### Multiple Input Parameters###）
 
 Functions can have multiple input parameters, which are written within the function’s parentheses, separated by commas.
+函式可以有多個傳數參數，參數的位置是放在括號之內，由逗號隔開。
 
 This function takes a start and an end index for a half-open range, and works out how many elements the range contains:
-
+以下的例子是有兩個傳入變數，一組半有校區間的起始索引和結束索引。函式目的是計算這個區間內有多少個有效元素：
 ```swift
 func halfOpenRangeLength(start: Int, end: Int) -> Int {
     return end - start
@@ -88,9 +94,10 @@ println(halfOpenRangeLength(1, 10))
 // prints "9"
 ```
 
-### Functions Without Parameters###
+無輸入參數函式（### Functions Without Parameters###）
 
 Functions are not required to define input parameters. Here’s a function with no input parameters, which always returns the same `String` message whenever it is called:
+函式不需要定義輸入參數。以下的例子就是沒有輸入參數的函式，當這個函式被呼叫的時候，永遠都回傳固定的 `String` 訊息：
 
 ```swift
 func sayHelloWorld() -> String {
@@ -101,10 +108,13 @@ println(sayHelloWorld())
 ```
 
 The function definition still needs parentheses after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called.
+然而，即使不需要定義輸入參數，函式的命名仍然需要用括號來結尾。函式的呼叫也需要在名字加上一對括號。
 
-### Functions Without Return Values###
+不具回傳值的函式（### Functions Without Return Values###）
 
 Functions are not required to define a return type. Here’s a version of the `sayHello` function, called `waveGoodbye`, which prints its own `String` value rather than returning it:
+
+函式也不需要定義回傳值。以下的例子是一個類似　`sayHello` 的函式 －`sayGoodbye`，它會印出函式內的字串變數而不是回傳該字串變數。
 
 ```swift
 func sayGoodbye(personName: String) {
@@ -116,9 +126,11 @@ sayGoodbye("Dave")
 
 Because it does not need to return a value, the function’s definition does not include the return arrow (`->`) or a return type.
 
+由於函式並沒有回傳值，因此函式定義就不需要回傳箭頭（`->`）或者是回傳值的型別。
 > **Note**
 >
 > Strictly speaking, the `sayGoodbye` function *does* still return a value, even though no return value is defined. Functions without a defined return type return a special value of type `Void`. This is simply an empty tuple, in effect a tuple with zero elements, which can be written as `()`.
+>嚴格來說， `sayGoodbye` 還是有回傳值，即使在函式中沒有明確定義它。沒有定義回傳型別的函式還是會回傳 `Void` 型別的特殊值。簡單的解釋， `Void` 是一個空集合，一個沒有包含任何元素的集合。
 
 The return value of a function can be ignored when it is called:
 
