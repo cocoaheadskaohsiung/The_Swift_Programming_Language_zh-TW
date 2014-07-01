@@ -12,14 +12,13 @@ For迴圈是用來將一組程式碼重複執行特定次數。Swift提供兩種
 
 - `for`-`in`針對區間、序列、集合(collection)或progression裡的各個項目執行程式。 
 
--`for`-`condition`-`increment`重複執行程式直到符合特定的條件，通常是在每次迴圈結束時遞增的計數器。`
+- `for`-`condition`-`increment`重複執行程式直到符合特定的條件，通常是在每次迴圈結束時遞增的計數器。
 
 ### For-In
 
 你可以使用`for`-`in`迴圈來重複處理集合裡的項目；像是ranges裡的數字、陣列裡的元素或是字串裡的字元。
 
-這個例子印出了前幾個五的倍數。This example prints the first few entries in the
-five-times-table:
+這個例子印出了前幾個五的倍數。
 
 ```swift
 for index in 1...5 {
