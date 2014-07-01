@@ -63,6 +63,7 @@ You can call the `sayHello` function multiple times with different input values.
 每次呼叫 `sayHello` 函式都可以傳入不同的參數。以上的例子說明當函式的參數分別傳入 `"Anna"` 和 `"Brian"` 會發生什麼事。
 
 To simplify the body of this function, combine the message creation and the return statement into one line:
+
 如果需要簡化函式主體的長度，我們可以把回傳值跟預先建立好的變數合併成一行，例子如下：
 
 ```swift
@@ -82,10 +83,12 @@ Function parameters and return values are extremely flexible in Swift. You can d
 多個傳入參數（### Multiple Input Parameters###）
 
 Functions can have multiple input parameters, which are written within the function’s parentheses, separated by commas.
+
 函式可以有多個傳數參數，參數的位置是放在括號之內，由逗號隔開。
 
 This function takes a start and an end index for a half-open range, and works out how many elements the range contains:
-以下的例子是有兩個傳入變數，一組半有校區間的起始索引和結束索引。函式目的是計算這個區間內有多少個有效元素：
+
+以下的例子是有兩個傳入變數，一組半有效區間的起始索引和結束索引。函式目的是計算這個區間內有多少個有效元素：
 ```swift
 func halfOpenRangeLength(start: Int, end: Int) -> Int {
     return end - start
@@ -97,6 +100,7 @@ println(halfOpenRangeLength(1, 10))
 無輸入參數函式（### Functions Without Parameters###）
 
 Functions are not required to define input parameters. Here’s a function with no input parameters, which always returns the same `String` message whenever it is called:
+
 函式不需要定義輸入參數。以下的例子就是沒有輸入參數的函式，當這個函式被呼叫的時候，永遠都回傳固定的 `String` 訊息：
 
 ```swift
@@ -108,6 +112,7 @@ println(sayHelloWorld())
 ```
 
 The function definition still needs parentheses after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called.
+
 然而，即使不需要定義輸入參數，函式的命名仍然需要用括號來結尾。函式的呼叫也需要在名字加上一對括號。
 
 不具回傳值的函式（### Functions Without Return Values###）
@@ -130,9 +135,12 @@ Because it does not need to return a value, the function’s definition does not
 > **Note**
 >
 > Strictly speaking, the `sayGoodbye` function *does* still return a value, even though no return value is defined. Functions without a defined return type return a special value of type `Void`. This is simply an empty tuple, in effect a tuple with zero elements, which can be written as `()`.
+>
 >嚴格來說， `sayGoodbye` 還是有回傳值，即使在函式中沒有明確定義它。沒有定義回傳型別的函式還是會回傳 `Void` 型別的特殊值。簡單的解釋， `Void` 是一個空集合，一個沒有包含任何元素的集合。
 
 The return value of a function can be ignored when it is called:
+
+函式的回傳值可以被忽略
 
 ```swift
 func printAndCount(stringToPrint: String) -> Int {
