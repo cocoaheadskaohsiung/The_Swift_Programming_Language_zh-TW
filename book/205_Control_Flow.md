@@ -55,7 +55,7 @@ println("\(base) to the power of \(power) is \(answer)")
 這個例子計算了一個數字的某次方(以這個例子來說是3的10次方)。它利用了從0開始到9結束的半封閉區間，讓乘積從1(也就是3的0次方)開始乘3乘了十次。
 整個計算過程中不需要知道每次迴圈的計數器的值—它只需要重過計算正確的次數即可。底線`_`(在原來變數名稱的位置使用)使得每次的值都被忽略而且在每次的迴圈裡也不能存取該值。
 
-Use the `for`-`in` loop with an array to iterate over its items:
+針對陣列使用`for`-`in`迴圈來一一處理陣列內的元素：
 
 ```swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
@@ -68,7 +68,7 @@ for name in names {
 // Hello, Jack!
 ```
 
-You can also iterate over a dictionary to access its key-value pairs. Each item in the dictionary is returned as a `(key, value)` tuple when the dictionary is iterated, and you can decompose the `(key, value)` tuple’s members as explicitly named constants for use within in the body of the `for`-`in` loop. Here, the dictionary’s keys are decomposed into a constant called `animalName`, and the dictionary’s values are decomposed into a constant called `legCount`:
+你也可以重複存取字典內的key-value。Each item in the dictionary is returned as a `(key, value)` tuple when the dictionary is iterated, and you can decompose the `(key, value)` tuple’s members as explicitly named constants for use within in the body of the `for`-`in` loop. Here, the dictionary’s keys are decomposed into a constant called `animalName`, and the dictionary’s values are decomposed into a constant called `legCount`:
 
 ```swift
 let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
