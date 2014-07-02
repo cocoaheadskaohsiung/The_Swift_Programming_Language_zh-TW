@@ -31,7 +31,7 @@ for index in 1...5 {
 // 5 times 5 is 25
 ```
 
-The collection of items being iterated is a closed range of numbers from `1` to `5` inclusive, as indicated by the use of the closed range operator (`...`). The value of `index` is set to the first number in the range (`1`), and the statements inside the loop are executed. In this case, the loop contains only one statement, which prints an entry from the five-times-table for the current value of `index`. After the statement is executed, the value of `index` is updated to contain the second value in the range (`2`), and the `println` function is called again. This process continues until the end of the range is reached.
+藉著使用封閉區間運算子 (`...`)使得這個集合內的項目也就是包括1到5之間的數字都可以取用。`index`的值被設定為區間內的第一個數字 (`1`)且迴圈內的述句會被執行。在這個例子裡，迴圈內只包含一個述句；它會印出目前`index`的值的5的倍數。在這個述句執行完畢後，`index`的值會被更新為第二個數字(`2`)，並且再次呼叫`println`這個函式。整個過程會一直持續進行直到抵達這個區間的結尾。
 
 在上述的範例中，`index`這個常數的值會在每次迴圈開始時自動被設定。因此，不需要宣告就可以使用它。它在迴圈的宣告中就被簡單的宣告了，而不需要另外使用關鍵字`let`來宣告。
 
@@ -39,7 +39,7 @@ The collection of items being iterated is a closed range of numbers from `1` to 
 > 
 > `index`這個常數只存在於迴圈的範圍之內。如果你想要在迴圈結束之後查看`index`的值或你想把這個值當作變數而不是常數來使用的話，你必須在迴圈開始前先自行宣告。
 
-如果你不需要使用到區間裡的數字，你可以藉著在變數的位置使用底線來忽略這些值。
+如果你不需要使用到區間裡的值，你可以藉著在原來變數名稱的位置使用底線來忽略這些值。
 
 ```swift
 let base = 3
@@ -52,7 +52,8 @@ println("\(base) to the power of \(power) is \(answer)")
 // prints "3 to the power of 10 is 59049"
 ```
 
-This example calculates the value of one number to the power of another (in this case, `3` to the power of `10`). It multiplies a starting value of `1` (that is, `3` to the power of `0`) by `3`, ten times, using a half-closed loop that starts with `0` and ends with `9`. This calculation doesn’t need to know the individual counter values each time through the loop—it simply needs to execute the loop the correct number of times. The underscore character `_` (used in place of a loop variable) causes the individual values to be ignored and does not provide access to the current value during each iteration of the loop.
+這個例子計算了一個數字的某次方(以這個例子來說是3的10次方)。它利用了從0開始到9結束的半封閉區間，讓3從1(也就是3的0次方)開始乘了十次。
+整個計算過程中不需要知道每次迴圈的計數器的值—他只需要重過計算正確的次數即可。底線`_`(在原來變數名稱的位置使用)使得每次的值都被忽略而且在每次的迴圈裡也不能存取該值。
 
 Use the `for`-`in` loop with an array to iterate over its items:
 
