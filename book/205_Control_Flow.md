@@ -53,7 +53,7 @@ println("\(base) to the power of \(power) is \(answer)")
 ```
 
 這個例子計算了一個數字的某次方(以這個例子來說是3的10次方)。它利用了從0開始到9結束的半封閉區間，讓乘積從1(也就是3的0次方)開始乘3乘了十次。
-整個計算過程中不需要知道每次迴圈的計數器的值—它只需要重過計算正確的次數即可。底線`_`(在原來變數名稱的位置使用)使得每次的值都被忽略而且在每次的迴圈裡也不能存取該值。
+整個計算過程中不需要知道每次迴圈的計數器的值—它只需要重複計算正確的次數即可。底線`_`(在原來變數名稱的位置使用)使得每次的值都被忽略而且在每次的迴圈裡也不能存取該值。
 
 針對陣列使用`for`-`in`迴圈來一一處理陣列內的元素：
 
@@ -68,7 +68,7 @@ for name in names {
 // Hello, Jack!
 ```
 
-你也可以重複存取字典內的key-value。Each item in the dictionary is returned as a `(key, value)` tuple when the dictionary is iterated, and you can decompose the `(key, value)` tuple’s members as explicitly named constants for use within in the body of the `for`-`in` loop. Here, the dictionary’s keys are decomposed into a constant called `animalName`, and the dictionary’s values are decomposed into a constant called `legCount`:
+你也可以重複存取字典內的key-value。當你迭代處理字典時，他會以`(key, value)` 的tuple形式回傳各個項目；你可以明確的命名`(key, value)` tuple裡的成員給`for`-`in` 迴圈內使用。在這裡，這個字典的鍵被分解到一個叫做`animalName`的常數而直被分解到一個叫做`legCount`的常數：
 
 ```swift
 let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
@@ -80,9 +80,9 @@ for (animalName, legCount) in numberOfLegs {
 // cats have 4 legs
 ```
 
-Items in a `Dictionary` may not necessarily be iterated in the same order as they were inserted. The contents of a `Dictionary` are inherently unordered, and iterating over them does not guarantee the order in which they will be retrieved. For more on arrays and dictionaries, see [Collection Types](204_Collection_Types.html "Collection Types").)
+字典裡的項目不必然會照著新增的順序迭代。字典的內容在設計上就是無序的，在迭代處理它們時不能夠保證取回的順序。要了解更多與陣列跟字典的資訊請看「集合類型」(204_Collection_Types.html "Collection Types").)
 
-In addition to arrays and dictionaries, you can also use the `for`-`in` loop to iterate over the `Character` values in a string:
+除了陣列跟字典之外，你也可以使用for-in迴圈來迭代處理字串中的字元。
 
 ```swift
 for character in "Hello" {
