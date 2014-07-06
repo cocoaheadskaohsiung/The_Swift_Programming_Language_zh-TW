@@ -68,7 +68,7 @@ for name in names {
 // Hello, Jack!
 ```
 
-你也可以重複存取字典內的key-value。當你迭代處理字典時，他會以`(key, value)` 的tuple形式回傳各個項目；你可以明確的命名`(key, value)` tuple裡的成員給`for`-`in` 迴圈內使用。在這裡，這個字典的鍵被分解到一個叫做`animalName`的常數而直被分解到一個叫做`legCount`的常數：
+你也可以重複存取字典內的key-value。當你迭代處理字典時，他會以`(key, value)` 的tuple形式回傳各個項目；你可以明確的命名`(key, value)` tuple裡的成員給`for`-`in` 迴圈內使用。在這裡，這個字典的鍵被分解到一個叫做`animalName`的常數而值被分解到一個叫做`legCount`的常數：
 
 ```swift
 let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
