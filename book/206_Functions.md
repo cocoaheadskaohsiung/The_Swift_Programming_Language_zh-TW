@@ -213,7 +213,7 @@ println("\(total.vowels) vowels and \(total.consonants) consonants")
 
 All of the above functions define *parameter names* for their parameters:
 
-以上所提到的函式都需要替他們的變數定義 *變數名*。
+以上所提到的函式都需要替他們的變數定義 `*變數名*`。
 
 ```swift
 func someFunction(parameterName: Int) {
@@ -224,7 +224,9 @@ func someFunction(parameterName: Int) {
 
 However, these parameter names are only used within the body of the function itself, and cannot be used when calling the function. These kinds of parameter names are known as *local parameter names*, because they are only available for use within the function’s body.
 
-### External Parameter Names###
+然而，這些變數名只能在函數主體中使用，不能在函數呼叫的時候被使用。這種變數就是所謂的`*局部變數(local parameter names)*`，因為這些變數只能在函式內部使用而以。
+
+外部變數命名（### External Parameter Names###）
 
 Sometimes it’s useful to name each parameter when you *call* a function, to indicate the purpose of each argument you pass to the function.
 
