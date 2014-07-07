@@ -2,11 +2,11 @@
 ---
 *Functions* are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.
 
-*Functions*（函式）本身就是用來執行特定功能的程式碼。 每個*FUNCTION*都會給予唯一的命名，在需要的時候，我們透過這個名字來"呼叫"它。 
+*Functions*（函式）本身就是用來執行特定功能的程式碼。每個*FUNCTION*都會給予唯一的命名，在需要的時候，我們透過這個名字來"呼叫"它。 
 
 Swift’s unified function syntax is flexible enough to express anything from a simple C-style function with no parameter names to a complex Objective-C-style method with local and external parameter names for each parameter. Parameters can provide default values to simplify function calls and can be passed as in-out parameters, which modify a passed variable once the function has completed its execution.
 
-Swift unified函式語法具有相當程度的彈性。簡單的像沒有參數的C語言函數，複雜的像具有內部變數和外部變數參數的Object-C函數都可以適用。參數本身有預設值用來簡化函式的呼叫，同時也可以當作傳入參數(pass in)或回傳參數(pass out)使用。 也就是說，當函式結束之後，參數值是會被改變的。
+Swift unified函式語法具有相當程度的彈性。簡單的像沒有參數的C語言函數，複雜的像具有內部變數和外部變數參數的Object-C函數都可以適用。參數本身有預設值用來簡化函式的呼叫，同時也可以當作傳入參數（pass in）或回傳參數（pass out）使用。 也就是說，當函式結束之後，參數值是會被改變的。
 
 Every function in Swift has a type, consisting of the function’s parameter types and return type. You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.
 
@@ -20,11 +20,11 @@ When you define a function, you can optionally define one or more named, typed v
 
 Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (known as *arguments*) that match the types of the function’s parameters. A function’s arguments must always be provided in the same order as the function’s parameter list.
 
-每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的"引數". 注意:傳入引數的順序必須要跟函式中的參數順序一致才可以。
+每個函式都會有自己的命名，用來表達這個函式的功能或目的。使用的方法是呼叫函式名字和傳入相對應型別的“引數”。注意：傳入引數的順序必須要跟函式中的參數順序一致才可以。
 
 The function in the example below is called `greetingForPerson`, because that’s what it does—it takes a person’s name as input and returns a greeting for that person. To accomplish this, you define one input parameter—a `String` value called `personName`—and a return type of `String`, which will contain a greeting for that person:
 
-以下的例子是叫做 `greetingForPerson`的函式，它做的事情是傳進來的人名加上歡迎詞然後就回傳給呼叫者。 為了達到這個目的，你需要定義一個參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別同樣也是字串，這個回傳值包含人名和歡迎詞。
+以下的例子是叫做 `greetingForPerson`的函式，它做的事情是把傳進來的人名加上歡迎詞然後回傳給呼叫者。為了這個目的，你需要定義一個傳入參數，型別是字串，名字叫做 `personName` ，同時你也需要定義回傳值，型別是字串，回傳值包含人名和歡迎詞。
 
 
 ```swift
@@ -52,13 +52,19 @@ println(sayHello("Brian"))
 
 You call the `sayHello` function by passing it a `String` argument value in parentheses, such as `sayHello("Anna")`. Because the function returns a `String` value, `sayHello` can be wrapped in a call to the `println` function to print that string and see its return value, as shown above.
 
-你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`.  
+你可以在呼叫 `sayHello` 函式的時候，在括號內傳入 `String` 型別的變數，例如 `sayHello("Anna")`。由於 `sayHello` 是回傳字串型別的資料，它也可以直接內嵌在  `println` 函式中。結果如上，螢幕會上印出 `sayHello` 的回傳字串。
 
 The body of the `sayHello` function starts by defining a new `String` constant called `greeting` and setting it to a simple greeting message for `personName`. This greeting is then passed back out of the function using the `return` keyword. As soon as `return greeting` is called, the function finishes its execution and returns the current value of `greeting`.
 
+`sayHello` 的函式主體是定義一個字串變數 `greeting` 開始，同時把傳遞進來的 `personName` 加上一句歡迎詞設定給這個 `greeting` 這個變數。我們藉由 `return` 這個關鍵字把設定過的 `greeting` 變數值回傳給呼叫者。也就是說，當 `return greeting` 被執行，這個函式就會結束執行並且回傳`greeting`目前的值。
+
 You can call the `sayHello` function multiple times with different input values. The example above shows what happens if it is called with an input value of `"Anna"`, and an input value of `"Brian"`. The function returns a tailored greeting in each case.
 
+每次呼叫 `sayHello` 函式都可以傳入不同的參數。以上的例子說明當函式的參數分別傳入 `"Anna"` 和 `"Brian"` 會發生什麼事。
+
 To simplify the body of this function, combine the message creation and the return statement into one line:
+
+如果需要簡化函式主體的長度，我們可以把回傳值跟預先建立好的變數合併成一行，例子如下：
 
 ```swift
 func sayHelloAgain(personName: String) -> String {
@@ -68,16 +74,21 @@ println(sayHelloAgain("Anna"))
 // prints "Hello again, Anna!"
 ```
 
-## Function Parameters and Return Values##
+函式的參數和回傳值（## Function Parameters and Return Values##）
 
 Function parameters and return values are extremely flexible in Swift. You can define anything from a simple utility function with a single unnamed parameter to a complex function with expressive parameter names and different parameter options.
 
-### Multiple Input Parameters###
+在Swift中，函式的參數和回傳值是相當有彈性的。從只有一個未命名參數的單一功能函式，到複雜功能函式中具有表達意義的參數名以及不同選項的參數，這些都是你可以定義的。
+
+多個傳入參數（### Multiple Input Parameters###）
 
 Functions can have multiple input parameters, which are written within the function’s parentheses, separated by commas.
 
+函式可以有多個傳數參數，參數的位置是放在括號之內，由逗號隔開。
+
 This function takes a start and an end index for a half-open range, and works out how many elements the range contains:
 
+以下的例子是有兩個傳入變數，一組半有效區間的起始索引和結束索引。函式目的是計算這個區間內有多少個有效元素：
 ```swift
 func halfOpenRangeLength(start: Int, end: Int) -> Int {
     return end - start
@@ -86,9 +97,11 @@ println(halfOpenRangeLength(1, 10))
 // prints "9"
 ```
 
-### Functions Without Parameters###
+無輸入參數函式（### Functions Without Parameters###）
 
 Functions are not required to define input parameters. Here’s a function with no input parameters, which always returns the same `String` message whenever it is called:
+
+函式不需要定義輸入參數。以下的例子就是沒有輸入參數的函式，當這個函式被呼叫的時候，永遠都回傳固定的 `String` 訊息：
 
 ```swift
 func sayHelloWorld() -> String {
@@ -100,9 +113,13 @@ println(sayHelloWorld())
 
 The function definition still needs parentheses after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called.
 
-### Functions Without Return Values###
+然而，即使不需要定義輸入參數，函式的命名仍然需要用括號來結尾。函式的呼叫也需要在名字加上一對括號。
+
+不具回傳值的函式（### Functions Without Return Values###）
 
 Functions are not required to define a return type. Here’s a version of the `sayHello` function, called `waveGoodbye`, which prints its own `String` value rather than returning it:
+
+函式也不需要定義回傳值。以下的例子是一個類似　`sayHello` 的函式 －`sayGoodbye`，它會印出函式內的字串變數而不是回傳該字串變數。
 
 ```swift
 func sayGoodbye(personName: String) {
@@ -114,11 +131,16 @@ sayGoodbye("Dave")
 
 Because it does not need to return a value, the function’s definition does not include the return arrow (`->`) or a return type.
 
+由於函式並沒有回傳值，因此函式定義就不需要回傳箭頭（`->`）或者是回傳值的型別。
 > **Note**
 >
 > Strictly speaking, the `sayGoodbye` function *does* still return a value, even though no return value is defined. Functions without a defined return type return a special value of type `Void`. This is simply an empty tuple, in effect a tuple with zero elements, which can be written as `()`.
+>
+>嚴格來說， `sayGoodbye` 還是有回傳值，即使在函式中沒有明確定義它。沒有定義回傳型別的函式還是會回傳 `Void` 型別的特殊值。簡單的解釋， `Void` 是一個空集合，一個沒有包含任何元素的集合。
 
 The return value of a function can be ignored when it is called:
+
+函式的回傳值可以被忽略
 
 ```swift
 func printAndCount(stringToPrint: String) -> Int {
@@ -136,15 +158,24 @@ printWithoutCounting("hello, world")
 
 The first function, `printAndCount`, prints a string, and then returns its character count as an `Int`. The second function, `printWithoutCounting`, calls the first function, but ignores its return value. When the second function is called, the message is still printed by the first function, but the returned value is not used.
 
+第一個函式 `printAndCount`，印出輸入的字串並且計算總共有幾個字元之後回傳一個 `Int` 型別的回傳值。第二個函式 `printWithoutCounting`，會呼叫第一個函式但是會忽略函式的回傳值。當第二個函式被呼叫的時候，輸入的字串依舊會被第一個函式印出來，但是第一個函式的回傳值並不會被使用。
+
 > **Note**
 >
 > Return values can be ignored, but a function that says it will return a value must always do so. A function with a defined return type cannot allow control to fall out of the bottom of the function without returning a value, and attempting to do so will result in a compile-time error.
+>
+>回傳值可以被忽略，但是函式有定義回傳值那就必須要有〝回傳值〞。如果函式有回傳值的定義，那麼在函式主體中的結束部分就不能沒有回傳值，要是你試圖這麼做的話，在COMPILER-TIME的時候會報錯。
 
-### Functions with Multiple Return Values###
+
+多個回傳值的函式　（### Functions with Multiple Return Values###）
 
 You can use a tuple type as the return type for a function to return multiple values as part of one compound return value.
+你可以把集合型別的變數都做函式的回值，也就是說函式可以把多個變數的回傳值視為〝一個〞複合變數的回傳值。
 
 The example below defines a function called `count`, which counts the number of vowels, consonants, and other characters in a string, based on the standard set of vowels and consonants used in American English:
+
+以下的例子定義一個叫做 `count` 的函式，它的功能是用來計算傳入的字串中有幾個母音字元，子音字元，以及除了母音和子音之外的其他字元個數。
+計算的依據是參考美式英文中定義的母音跟子音：
 
 ```swift
 func count(string: String) -> (vowels: Int, consonants: Int, others: Int) {
@@ -166,6 +197,8 @@ func count(string: String) -> (vowels: Int, consonants: Int, others: Int) {
 
 You can use this `count` function to count the characters in an arbitrary string, and to retrieve the counted totals as a tuple of three named `Int` values:
 
+你可以使用 `count` 函式來計算任意字串中所包含的字元，對於集合中的個別元素可以用整數型別去存取。
+
 ```swift
 let total = count("some arbitrary string!")
 println("\(total.vowels) vowels and \(total.consonants) consonants")
@@ -174,9 +207,13 @@ println("\(total.vowels) vowels and \(total.consonants) consonants")
 
 **Note** that the tuple’s members do not need to be named at the point that the tuple is returned from the function, because their names are already specified as part of the function’s return type.
 
-## Function Parameter Names##
+**Note** 集合中的成員不需要在函式回傳的時候去命名，因為它們的命名已經在函式宣告的時候已經定義過了。
+
+函式的參數命名（## Function Parameter Names##）
 
 All of the above functions define *parameter names* for their parameters:
+
+以上所提到的函式都需要替他們的變數定義 `*變數名*`。
 
 ```swift
 func someFunction(parameterName: Int) {
@@ -187,7 +224,9 @@ func someFunction(parameterName: Int) {
 
 However, these parameter names are only used within the body of the function itself, and cannot be used when calling the function. These kinds of parameter names are known as *local parameter names*, because they are only available for use within the function’s body.
 
-### External Parameter Names###
+然而，這些變數名只能在函數主體中使用，不能在函數呼叫的時候被使用。這種變數就是所謂的`*局部變數(local parameter names)*`，因為這些變數只能在函式內部使用而以。
+
+外部變數命名（### External Parameter Names###）
 
 Sometimes it’s useful to name each parameter when you *call* a function, to indicate the purpose of each argument you pass to the function.
 
