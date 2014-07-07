@@ -158,15 +158,24 @@ printWithoutCounting("hello, world")
 
 The first function, `printAndCount`, prints a string, and then returns its character count as an `Int`. The second function, `printWithoutCounting`, calls the first function, but ignores its return value. When the second function is called, the message is still printed by the first function, but the returned value is not used.
 
+第一個函式 `printAndCount`，印出輸入的字串並且計算總共有幾個字元之後回傳一個 `Int` 型別的回傳值。第二個函式 `printWithoutCounting`，會呼叫第一個函式但是會忽略函式的回傳值。當第二個函式被呼叫的時候，輸入的字串依舊會被第一個函式印出來，但是第一個函式的回傳值並不會被使用。
+
 > **Note**
 >
 > Return values can be ignored, but a function that says it will return a value must always do so. A function with a defined return type cannot allow control to fall out of the bottom of the function without returning a value, and attempting to do so will result in a compile-time error.
+>
+>回傳值可以被忽略，但是函式有定義回傳值那就必須要有〝回傳值〞。如果函式有回傳值的定義，那麼在函式主體中的結束部分就不能沒有回傳值，要是你試圖這麼做的話，在COMPILER-TIME的時候會報錯。
 
-### Functions with Multiple Return Values###
+
+多個回傳值的函式　（### Functions with Multiple Return Values###）
 
 You can use a tuple type as the return type for a function to return multiple values as part of one compound return value.
+你可以把集合型別的變數都做函式的回值，也就是說函式可以把多個變數的回傳值視為〝一個〞複合變數的回傳值。
 
 The example below defines a function called `count`, which counts the number of vowels, consonants, and other characters in a string, based on the standard set of vowels and consonants used in American English:
+
+以下的例子定義一個叫做 `count` 的函式，它的功能是用來計算傳入的字串中有幾個母音字元，子音字元，以及除了母音和子音之外的其他字元個數。
+計算的依據是參考美式英文中定義的母音跟子音：
 
 ```swift
 func count(string: String) -> (vowels: Int, consonants: Int, others: Int) {
@@ -188,6 +197,8 @@ func count(string: String) -> (vowels: Int, consonants: Int, others: Int) {
 
 You can use this `count` function to count the characters in an arbitrary string, and to retrieve the counted totals as a tuple of three named `Int` values:
 
+你可以使用 `count` 函式來計算任意字串中所包含的字元，對於集合中的個別元素可以用整數型別去存取。
+
 ```swift
 let total = count("some arbitrary string!")
 println("\(total.vowels) vowels and \(total.consonants) consonants")
@@ -196,9 +207,13 @@ println("\(total.vowels) vowels and \(total.consonants) consonants")
 
 **Note** that the tuple’s members do not need to be named at the point that the tuple is returned from the function, because their names are already specified as part of the function’s return type.
 
-## Function Parameter Names##
+**Note** 集合中的成員不需要在函式回傳的時候去命名，因為它們的命名已經在函式宣告的時候已經定義過了。
+
+函式的參數命名（## Function Parameter Names##）
 
 All of the above functions define *parameter names* for their parameters:
+
+以上所提到的函式都需要替他們的變數定義 *變數名*。
 
 ```swift
 func someFunction(parameterName: Int) {
