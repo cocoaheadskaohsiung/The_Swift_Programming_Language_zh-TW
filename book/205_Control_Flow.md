@@ -120,11 +120,11 @@ for initialization; condition; increment {
 
 這個迴圈的執行方式如下：
 
-- 當第一次進到這個迴圈時，  初始化(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
+- 當第一次進到這個迴圈時，  初始化表達式(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
 - 執行條件表達式( *condition expression*) 。如果執行結果是假(`false`)則迴圈結束；然後會繼續執行迴圈的右大括號  (`}`)之後的程式碼。 如果執行結果為真(`true`), 則會繼續執行括號內的述句。
 - 在所有的述句都執行完後，遞增表達式(*increment expression*) 會被執行。它可能會增加或減少計數器的值，或者根據某個述句的回傳值來幫計數器建立新的值。 在遞增表達式執行完後，回到第二步驟；並且再一次執行條件表達式。
 
-The loop format and execution process described above is shorthand for (and equivalent to) the outline below:
+上面所提到的迴圈的格式與執行步驟，可以如以下的方式簡易(或相同)的方式來表達：
 
 ```swift
 initialization
@@ -134,7 +134,7 @@ while condition {
 }
 ```
 
-Constants and variables declared within the initialization expression (such as `var index = 0`) are only valid within the scope of the `for` loop itself. To retrieve the final value of `index` after the loop ends, you must declare `index` before the loop’s scope begins:
+在初始化表達式裡宣告的常數與變數(如`var index = 0`)只在`for` 迴圈自己的範圍內有效。為了在迴圈結束後可以取得`index`最後的數值，你必須在迴圈開始之前就宣告`index`：
 
 ```swift
 var index: Int
