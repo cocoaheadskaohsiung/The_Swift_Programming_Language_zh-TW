@@ -97,7 +97,7 @@ for character in "Hello" {
 
 ### For-Condition-Increment
 
-In addition to `for`-`in` loops, Swift supports traditional C-style `for` loops with a condition and an incrementer:
+除了`for`-`in`迴圈外，Swift還支援傳統C語言的條件遞增型的 `for` 迴圈：
 
 ```swift
 for var index = 0; index < 3; ++index {
@@ -108,7 +108,7 @@ for var index = 0; index < 3; ++index {
 // index is 2
 ```
 
-Here’s the general form of this loop format:
+以下是這種for迴圈的一般形式：
 
 ```swift
 for initialization; condition; increment {
@@ -116,13 +116,13 @@ for initialization; condition; increment {
 }
 ```
 
-Semicolons separate the three parts of the loop’s definition, as in C. However, unlike C, Swift doesn’t need parentheses around the entire “initialization; condition; increment” block.
+就像Ｃ一樣，分號把迴圈的定義區分為三個部分。然而跟Ｃ不一樣的地方是，Swift不需要把“初始化; 條件; 遞增”的區塊用小括號括起來。
 
-The loop is executed as follows:
+這個迴圈的執行方式如下：
 
-- When the loop is first entered, the *initialization expression* is evaluated once, to set up any constants or variables that are needed for the loop.
-- The *condition expression* is evaluated. If it evaluates to `false`, the loop ends, and code execution continues after the `for` loop’s closing brace (`}`). If the expression evaluates to `true`, code execution continues by executing the statements inside the braces.
-- After all statements are executed, the *increment expression* is evaluated. It might increase or decrease the value of a counter, or set one of the initialized variables to a new value based on the outcome of the statements. After the increment expression has been evaluated, execution returns to step 2, and the condition expression is evaluated again.
+- 當第一次進到這個迴圈時，  初始化(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
+- 執行條件表達式( *condition expression*) 。如果執行結果是假(`false`)則迴圈結束；然後會繼續執行迴圈的右大括號  (`}`)之後的程式碼。 如果執行結果為真(`true`), 則會繼續執行括號內的述句。
+- 在所有的述句都執行完後，遞增表達式(*increment expression*) 會被執行。它可能會增加或減少計數器的值，或者根據某個述句的回傳值來幫計數器建立新的值。 在遞增表達式執行完後，回到第二步驟；並且再一次執行條件表達式。
 
 The loop format and execution process described above is shorthand for (and equivalent to) the outline below:
 
