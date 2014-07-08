@@ -120,11 +120,11 @@ for initialization; condition; increment {
 
 這個迴圈的執行方式如下：
 
-- 當第一次進到這個迴圈時，  初始化表達式(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
-- 執行條件表達式( *condition expression*) 。如果執行結果是假(`false`)則迴圈結束；然後會繼續執行迴圈的右大括號  (`}`)之後的程式碼。 如果執行結果為真(`true`), 則會繼續執行括號內的述句。
+- 當第一次進到這個迴圈時，初始化表達式(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
+- 執行條件表達式(*condition expression*) 。如果執行結果是假(`false`)則迴圈結束；然後會繼續執行迴圈的右大括號  (`}`)之後的程式碼。 如果執行結果為真(`true`), 則會繼續執行括號內的述句。
 - 在所有的述句都執行完後，遞增表達式(*increment expression*) 會被執行。它可能會增加或減少計數器的值，或者根據某個述句的回傳值來幫計數器建立新的值。 在遞增表達式執行完後，回到第二步驟；並且再一次執行條件表達式。
 
-上面所提到的迴圈的格式與執行步驟，可以如以下的方式簡易(或相同)的方式來表達：
+上面所提到的迴圈的格式與執行步驟，可以以下的方式較為簡易(而且等價)的格式來表達：
 
 ```swift
 initialization
@@ -148,11 +148,11 @@ println("The loop statements were executed \(index) times")
 // prints "The loop statements were executed 3 times"
 ```
 
-附帶一提，這個迴圈結束時`index`最後的直會是`3`而不是 `2`。最後一次的遞增表達式`++index`被呼叫時，它設定`index`為`3`；這使得`index < 3`的結果為`false`，結束這個迴圈。
+附帶一提，這個迴圈結束時`index`最後的值會是`3`而不是 `2`。最後一次的遞增表達式`++index`被呼叫時，它設定`index`為`3`；這使得`index < 3`的結果為`false`，結束這個迴圈。
 
 ## While迴圈
 
-`while`迴圈重複執行述直到條件變成 `false`。這種類型的迴圈最適合用在在開始執行之前不知道會重覆執行幾次的狀況。Swift提供兩種`while`迴圈：
+`while`迴圈重複執行述句直到條件變成 `false`。這種類型的迴圈最適合用在在開始執行之前不知道要重覆執行幾次的狀況。Swift提供兩種`while`迴圈：
 
 - `while` 會在每次迴圈的開始時執行條件的判斷。
 - `do`-`while` 會在每次迴圈的結束時執行條件的判斷。
@@ -180,8 +180,7 @@ while condition {
 - 如果當你回合結束時你位在梯子的下方，你必須移到梯子的上方。
 - 如果當你回合結束時你位在蛇的頭部，你必須移到蛇的下方。
 
-這個遊戲的棋盤可以被表示為整數(`Int`)的陣列。Its size is based on a constant called `finalSquare`, which is used to initialize the array and also to check for a win condition later in the example. The board is initialized with 26 zero `Int` values, not 25 (one each at indices `0` through `25` inclusive):
-
+這個遊戲的棋盤以整數(`Int`)的陣列來表示。該陣列的大小是基於一個叫做`finalSquare`的常數來決定的；它被用來初始化這個陣列而且在這個例子裡用來檢查勝利條件。 這裡初始化了26個值為零的整數為棋盤而不是25個整數(index包括了0到25)。
 ```swift
 let finalSquare = 25
 var board = Int[](count: finalSquare + 1, repeatedValue: 0)
