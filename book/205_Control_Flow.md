@@ -148,20 +148,20 @@ println("The loop statements were executed \(index) times")
 // prints "The loop statements were executed 3 times"
 ```
 
-Note that the final value of `index` after this loop is completed is `3`, not `2`. The last time the increment statement `++index` is called, it sets `index` to `3`, which causes `index < 3` to equate to `false`, ending the loop.
+附帶一提，這個迴圈結束時`index`最後的直會是`3`而不是 `2`。最後一次的遞增表達式`++index`被呼叫時，它設定`index`為`3`；這使得`index < 3`的結果為`false`，結束這個迴圈。
 
-## While Loops
+## While迴圈
 
-A `while` loop performs a set of statements until a condition becomes `false`. These kinds of loops are best used when the number of iterations is not known before the first iteration begins. Swift provides two kinds of `while` loop:
+`while`迴圈重複執行述直到條件變成 `false`。這種類型的迴圈最適合用在在開始執行之前不知道會重覆執行幾次的狀況。Swift提供兩種`while`迴圈：
 
-- `while` evaluates its condition at the start of each pass through the loop.
-- `do`-`while` evaluates its condition at the end of each pass through the loop.
+- `while` 會在每次迴圈的開始時執行條件的判斷。
+- `do`-`while` 會在每次迴圈的結束時執行條件的判斷。
 
 ### While
 
-A `while` loop starts by evaluating a single condition. If the condition is `true`, a set of statements is repeated until the condition becomes `false`.
+`while`會從執行條件判斷開始。如果結果為`true`，數據會被重複執行直到條件為`false`。
 
-Here’s the general form of a `while` loop:
+以下為常見的`while` 迴圈格式：
 
 ```swift
 while condition {
@@ -169,18 +169,18 @@ while condition {
 }
 ```
 
-This example plays a simple game of *Snakes and Ladders* (also known as *Chutes and Ladders*):
+這個例子是遊玩一個簡單的遊戲(*Snakes and Ladders*) (also known as *Chutes and Ladders*):
 
 ![Art/snakesAndLadders_2x.png](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/Art/snakesAndLadders_2x.png "Art/snakesAndLadders_2x.png")
 
-The rules of the game are as follows:
+遊戲規則如下：
 
-- The board has 25 squares, and the aim is to land on or beyond square 25.
-- Each turn, you roll a six-sided dice and move by that number of squares, following the horizontal path indicated by the dotted arrow above.
-- If your turn ends at the bottom of a ladder, you move up that ladder.
-- If your turn ends at the head of a snake, you move down that snake.
+- 棋盤有25個方塊，目的是要抵達第25號方塊。
+- 在每一回合，你都要擲一個六面的骰子而且前進該數字的方塊數；沿著如上圖的虛線箭頭往水平方向前進。
+- 如果當你回合結束時你位在梯子的下方，你必須移到梯子的上方。
+- 如果當你回合結束時你位在蛇的頭部，你必須移到蛇的下方。
 
-The game board is represented by an array of `Int` values. Its size is based on a constant called `finalSquare`, which is used to initialize the array and also to check for a win condition later in the example. The board is initialized with 26 zero `Int` values, not 25 (one each at indices `0` through `25` inclusive):
+這個遊戲的棋盤可以被表示為整數(`Int`)的陣列。Its size is based on a constant called `finalSquare`, which is used to initialize the array and also to check for a win condition later in the example. The board is initialized with 26 zero `Int` values, not 25 (one each at indices `0` through `25` inclusive):
 
 ```swift
 let finalSquare = 25
