@@ -1,8 +1,8 @@
-# Collection Types
+# 聚集型態
 ---
-Swift provides two *collection types*, known as arrays and dictionaries, for storing collections of values. Arrays store ordered lists of values of the same type. Dictionaries store unordered collections of values of the same type, which can be referenced and looked up through a unique identifier (also known as a key).
+Swift支援兩種*聚集型態*, 像已知的陣列型態以及字典型態,給予容器將值聚集儲存。陣列型態以序列方式儲存相同資料型態的資料。字典型態以無序列方式儲存相同資料型態的資料，它可以使用唯一的識別字從頭到尾尋找並將值取出(但必須知道它的識別字).
 
-Arrays and dictionaries in Swift are always clear about the types of values and keys that they can store. This means that you cannot insert a value of the wrong type into an array or dictionary by mistake. It also means you can be confident about the types of values you will retrieve from an array or dictionary. Swift’s use of explicitly typed collections ensures that your code is always clear about the types of values it can work with and enables you to catch any type mismatches early in your code’s development.
+陣列型態以及字典型態在Swift總是清楚關於型態值和識別字怎麼儲存。This means that you cannot insert a value of the wrong type into an array or dictionary by mistake. It also means you can be confident about the types of values you will retrieve from an array or dictionary. Swift’s use of explicitly typed collections ensures that your code is always clear about the types of values it can work with and enables you to catch any type mismatches early in your code’s development.
 
 > **NOTE**
 > 
