@@ -2,7 +2,8 @@
 ---
 Swift支援兩種*聚集型態*, 像已知的陣列型態以及字典型態,給予容器將值聚集儲存。陣列型態以序列方式儲存相同資料型態的資料。字典型態以無序列方式儲存相同資料型態的資料，它可以使用唯一的識別字從頭到尾尋找並將值取出(但必須知道它的識別字).
 
-陣列型態以及字典型態在Swift總是清楚關於型態值和識別字怎麼儲存。This means that you cannot insert a value of the wrong type into an array or dictionary by mistake. It also means you can be confident about the types of values you will retrieve from an array or dictionary. Swift’s use of explicitly typed collections ensures that your code is always clear about the types of values it can work with and enables you to catch any type mismatches early in your code’s development.
+陣列型態以及字典型態在Swift總是清楚關於型態值和識別字怎麼儲存，意思是你無法加入錯誤的資料型態在陣列或是字典中。也意味著你可以確信型態和值可以復取在陣列或是字典中。
+Swift使用顯示類型聚集確保你的程式碼清楚於型態與值可以工作以及使你早點抓取任何不匹配的型態在你開發程式時。
 
 > **NOTE**
 > 
