@@ -169,7 +169,7 @@ while condition {
 }
 ```
 
-這個例子是遊玩一個簡單的遊戲(*Snakes and Ladders*) (also known as *Chutes and Ladders*):
+這個例子是遊玩一個簡單的遊戲：蛇梯棋(*Snakes and Ladders*) (也叫做*Chutes and Ladders*):
 
 ![Art/snakesAndLadders_2x.png](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/Art/snakesAndLadders_2x.png "Art/snakesAndLadders_2x.png")
 
@@ -180,22 +180,24 @@ while condition {
 - 如果當你回合結束時你位在梯子的下方，你必須移到梯子的上方。
 - 如果當你回合結束時你位在蛇的頭部，你必須移到蛇的下方。
 
-這個遊戲的棋盤以整數(`Int`)的陣列來表示。該陣列的大小是基於一個叫做`finalSquare`的常數來決定的；它被用來初始化這個陣列而且在這個例子裡用來檢查勝利條件。 這裡初始化了26個值為零的整數為棋盤而不是25個整數(index包括了0到25)。
+這個遊戲的棋盤以整數(`Int`)的陣列來表示。該陣列的大小是基於一個叫做`finalSquare`的常數來決定的；它被用來初始化這個陣列而且在這個例子裡用來檢查勝利條件。 這裡以26個值為零的整數來初始化棋盤而不是25個整數(index包括了0到25)。
+
 ```swift
 let finalSquare = 25
 var board = Int[](count: finalSquare + 1, repeatedValue: 0)
 ```
 
-Some squares are then set to have more specific values for the snakes and ladders. Squares with a ladder base have a positive number to move you up the board, whereas squares with a snake head have a negative number to move you back down the board:
+之後某些方塊會設定蛇梯棋中會用到的特別的數值。在梯子底部的方塊會擁有正數用來讓你往棋盤上方爬；而為在蛇頭的方塊會擁有負數用來讓你落往棋盤下方。
 
 ```swift
 board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
 board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
 ```
 
-Square 3 contains the bottom of a ladder that moves you up to square 11. To represent this, `board[03]` is equal to `+08`, which is equivalent to an integer value of `8` (the difference between `3` and `11`). The unary plus operator (`+i`) balances with the unary minus operator (`-i`), and numbers lower than `10` are padded with zeros so that all board definitions align. (Neither stylistic tweak is strictly necessary, but they lead to neater code.)
+方塊3為在梯子的底部所以你可以上昇到方塊11。為了表現出前述的狀況，`board[03]`的值是`+08`，代表整數數值`8` (`3` 與`11`的差值)。 
+一元運算子加號(`+i`)跟一元運算子減號相對稱(`-i`)，而且在小於`10`的數字前多加零。(這些都不是必須的，但他們傾向整齊的程式)
 
-The player’s starting square is “square zero”, which is just off the bottom left corner of the board. The first dice roll always moves the player on to the board:
+玩家會從“方塊零”也就是指棋盤的左下角外開始。玩家第一次擲骰子後就會移動到擲出來的數字那格：
 
 ```swift
 var square = 0
@@ -213,7 +215,7 @@ while square < finalSquare {
 println("Game over!")
 ```
 
-This example uses a very simple approach to dice rolling. Instead of a random number generator, it starts with a `diceRoll` value of `0`. Each time through the `while` loop, `diceRoll` is incremented with the prefix increment operator (`++i`), and is then checked to see if it has become too large. The return value of `++diceRoll` is equal to the value of `diceRoll` *after* it is incremented. Whenever this return value equals 7, the dice roll has become too large, and is reset to a value of `1`. This gives a sequence of `diceRoll` values that is always `1`, `2`, `3`, `4`, `5`, `6`, `1`, `2` and so on.
+這個範例使用了非常簡單的方式來模擬擲骰子。 它讓`diceRoll`的值從`0`.開始來代替亂數產生器。Each time through the `while` loop, `diceRoll` is incremented with the prefix increment operator (`++i`), and is then checked to see if it has become too large. The return value of `++diceRoll` is equal to the value of `diceRoll` *after* it is incremented. Whenever this return value equals 7, the dice roll has become too large, and is reset to a value of `1`. This gives a sequence of `diceRoll` values that is always `1`, `2`, `3`, `4`, `5`, `6`, `1`, `2` and so on.
 
 After rolling the dice, the player moves forward by `diceRoll` squares. It’s possible that the dice roll may have moved the player beyond square 25, in which case the game is over. To cope with this scenario, the code checks that `square` is less than the `board` array’s `count` property before adding the value stored in `board[square]` onto the current `square` value to move the player up or down any ladders or snakes.
 
