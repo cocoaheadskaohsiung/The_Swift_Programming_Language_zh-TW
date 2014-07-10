@@ -8,7 +8,7 @@
    * [基本語法 (Dofi)](book/201_The_Basics.md)
    * [基本運算元 (Mikimoto)](book/202_Basic_Operators.md)
    * [字串與字元 (Evan)](book/203_Strings_and_Characters.md)
-   * [Collection Types (YoGa)](book/204_Collection_Types.md)
+   * [聚集型態 (YoGa)](book/204_Collection_Types.md)
    * [Control Flow (DDT)](book/205_Control_Flow.md)
    * [Functions (Hank Hsiao)](book/206_Functions.md)
    * [Closures](book/207_Closures.md)
