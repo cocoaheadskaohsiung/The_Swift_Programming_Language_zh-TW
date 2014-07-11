@@ -19,6 +19,7 @@ The Swift Programming Language 正體中文版
 - Mikimoto
 - Marcus
 - HankH
+- YoGa
 
 ## 我想協助翻譯 ##
 ---
