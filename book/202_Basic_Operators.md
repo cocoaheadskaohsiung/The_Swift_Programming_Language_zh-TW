@@ -2,7 +2,7 @@
 ---
 運算元是一個特殊的符號或標誌，讓您可以檢查、改變或加總數值。舉例來說，加法運算元 (`+`) 會將兩個數字加總 (例如：`let i=1+2`)。比較複雜一點的例子會包含邏輯運算元 (`&&`表示邏輯上的 AND)(例如 `if enteredDoorCode && passedRetinaScan`就是在說明，如果 `enteredDoorCode` 和(`AND`) `passedRetinaScan` 兩個表示式都為真)，跟漸增運算子(`++i`，這個運算子會把 `i` 現有的值加 `1`)。
 
-Swift 支援大部分標準 C 語言的運算子，並且改進了許多運算子的相容性
+Swift 支援大部分標準 C 語言的運算子，並且改進了許多運算子的相容性來減少一些常見的
 Swift supports most standard C operators and improves several capabilities to eliminate common coding errors. The assignment operator (`=`) does not return a value, to prevent it from being mistakenly used when the equal to operator (`==`) is intended. Arithmetic operators (`+`, `-`, `*`, `/`, `%` and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift’s overflow operators, as described in [Overflow Operators]().
 
 Unlike C, Swift lets you perform remainder (`%`) calculations on floating-point numbers. Swift also provides two range operators (`a..b` and `a...b`) not found in C, as a shortcut for expressing a range of values.
