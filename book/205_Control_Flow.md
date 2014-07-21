@@ -264,7 +264,7 @@ do {
 println("Game over!")
 ```
 
-在程式檢查過蛇與梯子後，擲出骰子，然後玩家根據`diceRoll`前進。這次的迴圈結束。
+在程式檢查過蛇與梯子後擲出骰子，然後玩家根據`diceRoll`前進。這次的迴圈結束。
 
 這個迴圈的條件 (`while square < finalSquare`)跟前一個範例一樣，但在這次的版本裡會直到迴圈第一次*結束*後才會執行。`do`-`while`迴圈的結構比前例中的`while`迴圈更適合這個遊戲。在上面的`do`-`while`迴圈裡，`square += board[square]` 總是*緊接著*在`while`迴圈的條件判斷之後也就說`square`還在board的範圍內。這個流程省略了遊戲的上個版本中檢查陣列範圍的動作。
 
