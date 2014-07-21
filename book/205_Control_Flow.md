@@ -227,9 +227,9 @@ println("Game over!")
 
 ### Do-While
 
-The other variation of the `while` loop, known as the `do`-`while` loop, performs a single pass through the loop block first, *before* considering the loop’s condition. It then continues to repeat the loop until the condition is `false`.
+另外一個`while`迴圈的變形也就是大家都知道的 `do`-`while`迴圈；會在判斷迴圈條件*之前* 先執行一次迴圈內的程式。它會持續重複執行直到條件式回傳`false`。
 
-Here’s the general form of a `do`-`while` loop:
+以下是`do`-`while` 迴圈的一般形式：
 
 ```swift
 do {
@@ -237,7 +237,7 @@ do {
 } while condition
 ```
 
-Here’s the *Snakes and Ladders* example again, written as a `do`-`while` loop rather than a while loop. The values of `finalSquare`, `board`, `square`, and `diceRoll` are initialized in exactly the same way as with a `while` loop:
+這裡再次用*蛇梯棋*當作例子，以`do`-`while`代替while迴圈。`finalSquare`．`board`．`square`與`diceRoll`都以與 `while`迴圈版相同的方式初始化：
 
 ```swift
 let finalSquare = 25
@@ -248,9 +248,9 @@ var square = 0
 var diceRoll = 0
 ```
 
-In this version of the game, the *first* action in the loop is to check for a ladder or a snake. No ladder on the board takes the player straight to square 25, and so it is not possible to win the game by moving up a ladder. Therefore, it is safe to check for a snake or a ladder as the first action in the loop.
+在遊戲的這個版本，迴圈裡的*第一個*動作是檢查梯子或蛇。棋盤裡沒有梯子會把玩家帶到方塊25，因此不可能借由爬上梯子導致勝利。因此，以檢查梯子或蛇作為迴圈裡的第一個動作是安全的。
 
-At the start of the game, the player is on “square zero”. `board[0]` always equals `0`, and has no effect:
+在遊戲開始時，玩家為在方塊0。`board[0]`的值總是`0`，因此沒有影響：
 
 ```swift
 do {
@@ -264,9 +264,9 @@ do {
 println("Game over!")
 ```
 
-After the code checks for snakes and ladders, the dice is rolled, and the player is moved forward by `diceRoll` squares. The current loop execution then ends.
+在程式檢查過蛇與梯子後，擲出骰子， 然後玩家根據`diceRoll`前進。這次的迴圈結束。
 
-The loop’s condition (`while square < finalSquare`) is the same as before, but this time it is not evaluated until the *end* of the first run through the loop. The structure of the `do`-`while` loop is better suited to this game than the `while` loop in the previous example. In the `do`-`while` loop above, `square += board[square]` is always executed *immediately after* the loop’s `while` condition confirms that `square` is still on the board. This behavior removes the need for the array bounds check seen in the earlier version of the game.
+這個迴圈的條件 (`while square < finalSquare`)跟前一個範例一樣，但這次直到迴圈第一次*結束*後才會執行。`do`-`while`迴圈的結構比前例中的`while`迴圈更適合這個遊戲。在上面的`do`-`while`迴圈裡，`square += board[square]` 總是*緊接著*在`while`迴圈的條件判斷之後也就說`square`還在board的範圍內。這個流程省略了遊戲的上個版本中檢查陣列範圍的動作。
 
 ## Conditional Statements
 
