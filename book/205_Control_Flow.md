@@ -215,15 +215,15 @@ while square < finalSquare {
 println("Game over!")
 ```
 
-這個範例使用了非常簡單的方式來模擬擲骰子。 它讓`diceRoll`的值從`0`.開始來代替亂數產生器。Each time through the `while` loop, `diceRoll` is incremented with the prefix increment operator (`++i`), and is then checked to see if it has become too large. The return value of `++diceRoll` is equal to the value of `diceRoll` *after* it is incremented. Whenever this return value equals 7, the dice roll has become too large, and is reset to a value of `1`. This gives a sequence of `diceRoll` values that is always `1`, `2`, `3`, `4`, `5`, `6`, `1`, `2` and so on.
+這個範例使用了非常簡單的方式來模擬擲骰子。 它讓`diceRoll`的值從`0`開始來代替亂數產生器。每次`while`迴圈執行的時候，`diceRoll` 的值會以前置運算子(`++i`)遞增，然後檢查這個值是否變得太大。`++diceRoll`的回傳值相當於`diceRoll`在遞增 *之後*的值。當回傳值等於7的時候，骰子擲出來的數字變得太大便將其值重新設定為`1`。這讓`diceRoll`的值總是會是個`1`, `2`, `3`, `4`, `5`, `6`, `1`, `2`等等以此類推的序列。
 
-After rolling the dice, the player moves forward by `diceRoll` squares. It’s possible that the dice roll may have moved the player beyond square 25, in which case the game is over. To cope with this scenario, the code checks that `square` is less than the `board` array’s `count` property before adding the value stored in `board[square]` onto the current `square` value to move the player up or down any ladders or snakes.
+擲出骰子後，玩家前進`diceRoll`數的格子。擲出來的結果可能會讓玩家移動到方塊25之後，在這種狀況下即宣告遊戲結束。為了處理這種狀況，在把`board[square]`的值加到`square`的現值讓玩家沿著提子或蛇上昇或下降之前，程式會檢查`square`的值是否小於`board`這個陣列的`count`屬性。
 
-Had this check not been performed, `board[square]` might try to access a value outside the bounds of the `board` array, which would trigger an error. If `square` is now equal to `26`, the code would try to check the value of `board[26]`, which is larger than the size of the array.
+如果沒有做這項檢查的話，`board[square]`可能會去讀取`board`陣列的範圍之外的值，這會將會出錯。如果`square`等於`26`的話，程式會試著去檢查`board[26]`這個在陣列範圍外的值。
 
-The current `while` loop execution then ends, and the loop’s condition is checked to see if the loop should be executed again. If the player has moved on or beyond square number `25`, the loop’s condition evaluates to `false`, and the game ends.
+當現在這次`while`迴圈執行結束時，會檢查的迴圈執行條件來判斷是否繼續執行迴圈。如果玩家移到方塊`25`或之後，迴圈的執行條件會回傳 `false`並且結束這個遊戲。
 
-A `while` loop is appropriate in this case because the length of the game is not clear at the start of the `while` loop. Instead, the loop is executed until a particular condition is satisfied.
+`while`迴圈適合用在這個例子，因為在`while`迴圈執行之前並不知道遊戲會玩多久。相對的，迴圈會一直執行到滿足特定條件為止。
 
 ### Do-While
 
