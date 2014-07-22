@@ -1,24 +1,24 @@
-# Control Flow
+# 控制流程
 ---
-Swift provides all the familiar control flow constructs of C-like languages. These include `for` and `while` loops to perform a task multiple times; `if` and `switch` statements to execute different branches of code based on certain conditions; and statements such as `break` and `continue` to transfer the flow of execution to another point in your code.
+Swift提供所有類似C中常見的控制流程結構；其中包括了處理複數次工作的`for`及`while`迴圈，與根據特定的條件來執行不同的程式分支的`if`與`switch`述句(statements)，以及像是`break`跟`continue`這種能將流程轉移至程式中的其他位置的述句。
 
-In addition to the traditional `for`-`condition`-`increment` loop found in C, Swift adds a `for`-`in` loop that makes it easy to iterate over arrays, dictionaries, ranges, strings, and other sequences.
+除了C語言提供的傳統`for`-`condition`-`increment`迴圈外，Swift增加了`for`-`in`迴圈來讓陣列、字典(dictionaries)、區間(ranges)、字串(strings)及其他序列(sequences)的迭代更加容易。
 
-Swift’s `switch` statement is also considerably more powerful than its counterpart in C. The cases of a `switch` statement do not “fall through” to the next case in Swift, avoiding common C errors caused by missing `break` statements. Cases can match many different types of pattern, including range matches, tuples, and casts to a specific type. Matched values in a `switch` case can be bound to temporary constants or variables for use within the case’s body, and complex matching conditions can be expressed with a `where` clause for each case.
+而Swift裡的`switch`述句也比C語言所提供的更加強大。 Swift裡的`switch`述句裡的case不會”跨越“到下個case，避免一般在C語言因為少寫`break`敘述句而造成的錯誤。Case可以用不同的模式來比對，包括區間、比對, 多元組(tuples)以及轉至特定型別(casts to a specific type)。在`switch`的case中符合的值在case的範圍可以被當作是暫時的常數或變數來使用而且在各個case中複雜的比對條件可以用`where`子句來表示。
 
-## For Loops
+## For迴圈
 
-A `for` loop performs a set of statements a certain number of times. Swift provides two kinds of `for` loop:
+For迴圈是用來將一組程式碼重複執行特定次數。Swift提供兩種`for`迴圈：
 
-- `for`-`in` performs a set of statements for each item in a range, sequence, collection, or progression.
+- `for`-`in`針對區間、序列、集合(collection)或progression裡的各個項目執行程式。 
 
-- `for`-`condition`-`increment` performs a set of statements until a specific condition is met, typically by incrementing a counter each time the loop ends.
+- `for`-`condition`-`increment`重複執行程式直到符合特定的條件，通常是在每次迴圈結束時遞增的計數器。
 
 ### For-In
 
-You use the `for`-`in` loop to iterate over collections of items, such as ranges of numbers, items in an array, or characters in a string.
+你可以使用`for`-`in`迴圈來重複處理集合裡的項目；像是ranges裡的數字、陣列裡的元素或是字串裡的字元。
 
-This example prints the first few entries in the five-times-table:
+這個例子印出了前幾個五的倍數。
 
 ```swift
 for index in 1...5 {
@@ -31,15 +31,15 @@ for index in 1...5 {
 // 5 times 5 is 25
 ```
 
-The collection of items being iterated is a closed range of numbers from `1` to `5` inclusive, as indicated by the use of the closed range operator (`...`). The value of `index` is set to the first number in the range (`1`), and the statements inside the loop are executed. In this case, the loop contains only one statement, which prints an entry from the five-times-table for the current value of `index`. After the statement is executed, the value of `index` is updated to contain the second value in the range (`2`), and the `println` function is called again. This process continues until the end of the range is reached.
+藉著使用封閉區間運算子 (`...`)使得這個集合內的項目也就是包括1到5之間的數字都可以取用。`index`的值被設定為區間內的第一個數字 (`1`)且迴圈內的述句會被執行。在這個例子裡，迴圈內只包含一個述句；它會印出目前`index`的值的5的倍數。在這個述句執行完畢後，`index`的值會被更新為第二個數字(`2`)，並且再次呼叫`println`這個函式。整個過程會一直持續進行直到抵達這個區間的結尾。
 
-In the example above, `index` is a constant whose value is automatically set at the start of each iteration of the loop. As such, it does not have to be declared before it is used. It is implicitly declared simply by its inclusion in the loop declaration, without the need for a `let` declaration keyword.
+在上述的範例中，`index`這個常數的值會在每次迴圈開始時自動被設定。因此，不需要宣告就可以使用它。它在迴圈的宣告中就被簡單的宣告了，而不需要另外使用關鍵字`let`來宣告。
 
-> **NOTE**
+> **備註**
 > 
-> The `index` constant exists only within the scope of the loop. If you want to check the value of `index` after the loop completes, or if you want to work with its value as a variable rather than a constant, you must declare it yourself before its use in the loop.
+> `index`這個常數只存在於迴圈的範圍之內。如果你想要在迴圈結束之後查看`index`的值或你想把這個值當作變數而不是常數來使用的話，你必須在迴圈開始前先自行宣告。
 
-If you don’t need each value from the range, you can ignore the values by using an underscore in place of a variable name:
+如果你不需要使用到區間裡的值，你可以藉著在原來變數名稱的位置使用底線來忽略這些值。
 
 ```swift
 let base = 3
@@ -52,9 +52,10 @@ println("\(base) to the power of \(power) is \(answer)")
 // prints "3 to the power of 10 is 59049"
 ```
 
-This example calculates the value of one number to the power of another (in this case, `3` to the power of `10`). It multiplies a starting value of `1` (that is, `3` to the power of `0`) by `3`, ten times, using a half-closed loop that starts with `0` and ends with `9`. This calculation doesn’t need to know the individual counter values each time through the loop—it simply needs to execute the loop the correct number of times. The underscore character `_` (used in place of a loop variable) causes the individual values to be ignored and does not provide access to the current value during each iteration of the loop.
+這個例子計算了一個數字的某次方(以這個例子來說是3的10次方)。它利用了從0開始到9結束的半封閉區間，讓乘積從1(也就是3的0次方)開始乘3乘了十次。
+整個計算過程中不需要知道每次迴圈的計數器的值—它只需要重複計算正確的次數即可。底線`_`(在原來變數名稱的位置使用)使得每次的值都被忽略而且在每次的迴圈裡也不能存取該值。
 
-Use the `for`-`in` loop with an array to iterate over its items:
+針對陣列使用`for`-`in`迴圈來一一處理陣列內的元素：
 
 ```swift
 let names = ["Anna", "Alex", "Brian", "Jack"]
@@ -67,7 +68,7 @@ for name in names {
 // Hello, Jack!
 ```
 
-You can also iterate over a dictionary to access its key-value pairs. Each item in the dictionary is returned as a `(key, value)` tuple when the dictionary is iterated, and you can decompose the `(key, value)` tuple’s members as explicitly named constants for use within in the body of the `for`-`in` loop. Here, the dictionary’s keys are decomposed into a constant called `animalName`, and the dictionary’s values are decomposed into a constant called `legCount`:
+你也可以重複存取字典內的key-value。當你迭代處理字典時，他會以`(key, value)` 的tuple形式回傳各個項目；你可以明確的命名`(key, value)` tuple裡的成員給`for`-`in` 迴圈內使用。在這裡，這個字典的鍵被分解到一個叫做`animalName`的常數而值被分解到一個叫做`legCount`的常數：
 
 ```swift
 let numberOfLegs = ["spider": 8, "ant": 6, "cat": 4]
@@ -79,9 +80,9 @@ for (animalName, legCount) in numberOfLegs {
 // cats have 4 legs
 ```
 
-Items in a `Dictionary` may not necessarily be iterated in the same order as they were inserted. The contents of a `Dictionary` are inherently unordered, and iterating over them does not guarantee the order in which they will be retrieved. For more on arrays and dictionaries, see [Collection Types](204_Collection_Types.html "Collection Types").)
+字典裡的項目不必然會照著新增的順序迭代。字典的內容在設計上就是無序的，在迭代處理它們時不能夠保證取回的順序。要了解更多與陣列跟字典的資訊請看「集合類型」(204_Collection_Types.html "Collection Types").)
 
-In addition to arrays and dictionaries, you can also use the `for`-`in` loop to iterate over the `Character` values in a string:
+除了陣列跟字典之外，你也可以使用for-in迴圈來迭代處理字串中的字元。
 
 ```swift
 for character in "Hello" {
@@ -96,7 +97,7 @@ for character in "Hello" {
 
 ### For-Condition-Increment
 
-In addition to `for`-`in` loops, Swift supports traditional C-style `for` loops with a condition and an incrementer:
+除了`for`-`in`迴圈外，Swift還支援傳統C語言的條件遞增型的 `for` 迴圈：
 
 ```swift
 for var index = 0; index < 3; ++index {
@@ -107,7 +108,7 @@ for var index = 0; index < 3; ++index {
 // index is 2
 ```
 
-Here’s the general form of this loop format:
+以下是這種for迴圈的一般形式：
 
 ```swift
 for initialization; condition; increment {
@@ -115,15 +116,15 @@ for initialization; condition; increment {
 }
 ```
 
-Semicolons separate the three parts of the loop’s definition, as in C. However, unlike C, Swift doesn’t need parentheses around the entire “initialization; condition; increment” block.
+就像Ｃ一樣，分號把迴圈的定義區分為三個部分。然而跟Ｃ不一樣的地方是，Swift不需要把“初始化; 條件; 遞增”的區塊用小括號括起來。
 
-The loop is executed as follows:
+這個迴圈的執行方式如下：
 
-- When the loop is first entered, the *initialization expression* is evaluated once, to set up any constants or variables that are needed for the loop.
-- The *condition expression* is evaluated. If it evaluates to `false`, the loop ends, and code execution continues after the `for` loop’s closing brace (`}`). If the expression evaluates to `true`, code execution continues by executing the statements inside the braces.
-- After all statements are executed, the *increment expression* is evaluated. It might increase or decrease the value of a counter, or set one of the initialized variables to a new value based on the outcome of the statements. After the increment expression has been evaluated, execution returns to step 2, and the condition expression is evaluated again.
+- 當第一次進到這個迴圈時，初始化表達式(*initialization expression*)會被執行一次，用以建立任何在這個迴圈所需要的常數或變數。
+- 執行條件表達式(*condition expression*) 。如果執行結果是假(`false`)則迴圈結束；然後會繼續執行迴圈的右大括號  (`}`)之後的程式碼。 如果執行結果為真(`true`), 則會繼續執行括號內的述句。
+- 在所有的述句都執行完後，遞增表達式(*increment expression*) 會被執行。它可能會增加或減少計數器的值，或者根據某個述句的回傳值來幫計數器建立新的值。 在遞增表達式執行完後，回到第二步驟；並且再一次執行條件表達式。
 
-The loop format and execution process described above is shorthand for (and equivalent to) the outline below:
+上面所提到的迴圈的格式與執行步驟，可以以下的方式較為簡易(而且等價)的格式來表達：
 
 ```swift
 initialization
@@ -133,7 +134,7 @@ while condition {
 }
 ```
 
-Constants and variables declared within the initialization expression (such as `var index = 0`) are only valid within the scope of the `for` loop itself. To retrieve the final value of `index` after the loop ends, you must declare `index` before the loop’s scope begins:
+在初始化表達式裡宣告的常數與變數(如`var index = 0`)只在`for` 迴圈自己的範圍內有效。為了在迴圈結束後可以取得`index`最後的數值，你必須在迴圈開始之前就宣告`index`：
 
 ```swift
 var index: Int
@@ -147,20 +148,20 @@ println("The loop statements were executed \(index) times")
 // prints "The loop statements were executed 3 times"
 ```
 
-Note that the final value of `index` after this loop is completed is `3`, not `2`. The last time the increment statement `++index` is called, it sets `index` to `3`, which causes `index < 3` to equate to `false`, ending the loop.
+附帶一提，這個迴圈結束時`index`最後的值會是`3`而不是 `2`。最後一次的遞增表達式`++index`被呼叫時，它設定`index`為`3`；這使得`index < 3`的結果為`false`，結束這個迴圈。
 
-## While Loops
+## While迴圈
 
-A `while` loop performs a set of statements until a condition becomes `false`. These kinds of loops are best used when the number of iterations is not known before the first iteration begins. Swift provides two kinds of `while` loop:
+`while`迴圈重複執行述句直到條件變成 `false`。這種類型的迴圈最適合用在在開始執行之前不知道要重覆執行幾次的狀況。Swift提供兩種`while`迴圈：
 
-- `while` evaluates its condition at the start of each pass through the loop.
-- `do`-`while` evaluates its condition at the end of each pass through the loop.
+- `while` 會在每次迴圈的開始時執行條件的判斷。
+- `do`-`while` 會在每次迴圈的結束時執行條件的判斷。
 
 ### While
 
-A `while` loop starts by evaluating a single condition. If the condition is `true`, a set of statements is repeated until the condition becomes `false`.
+`while`會從執行條件判斷開始。如果結果為`true`，數據會被重複執行直到條件為`false`。
 
-Here’s the general form of a `while` loop:
+以下為常見的`while` 迴圈格式：
 
 ```swift
 while condition {
@@ -168,34 +169,35 @@ while condition {
 }
 ```
 
-This example plays a simple game of *Snakes and Ladders* (also known as *Chutes and Ladders*):
+這個例子是遊玩一個簡單的遊戲：蛇梯棋(*Snakes and Ladders*) (也叫做*Chutes and Ladders*):
 
 ![Art/snakesAndLadders_2x.png](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/Art/snakesAndLadders_2x.png "Art/snakesAndLadders_2x.png")
 
-The rules of the game are as follows:
+遊戲規則如下：
 
-- The board has 25 squares, and the aim is to land on or beyond square 25.
-- Each turn, you roll a six-sided dice and move by that number of squares, following the horizontal path indicated by the dotted arrow above.
-- If your turn ends at the bottom of a ladder, you move up that ladder.
-- If your turn ends at the head of a snake, you move down that snake.
+- 棋盤有25個方塊，目的是要抵達第25號方塊。
+- 在每一回合，你都要擲一個六面的骰子而且前進該數字的方塊數；沿著如上圖的虛線箭頭往水平方向前進。
+- 如果當你回合結束時你位在梯子的下方，你必須移到梯子的上方。
+- 如果當你回合結束時你位在蛇的頭部，你必須移到蛇的下方。
 
-The game board is represented by an array of `Int` values. Its size is based on a constant called `finalSquare`, which is used to initialize the array and also to check for a win condition later in the example. The board is initialized with 26 zero `Int` values, not 25 (one each at indices `0` through `25` inclusive):
+這個遊戲的棋盤以整數(`Int`)的陣列來表示。該陣列的大小是基於一個叫做`finalSquare`的常數來決定的；它被用來初始化這個陣列而且在這個例子裡用來檢查勝利條件。 這裡以26個值為零的整數來初始化棋盤而不是25個整數(index包括了0到25)。
 
 ```swift
 let finalSquare = 25
 var board = Int[](count: finalSquare + 1, repeatedValue: 0)
 ```
 
-Some squares are then set to have more specific values for the snakes and ladders. Squares with a ladder base have a positive number to move you up the board, whereas squares with a snake head have a negative number to move you back down the board:
+之後某些方塊會設定在蛇梯棋遊戲中用到的一些特定數值。在梯子底部的方塊會擁有正數用來讓你往棋盤上方爬；而位在蛇頭的方塊會擁有負數用來讓你落往棋盤下方。
 
 ```swift
 board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
 board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
 ```
 
-Square 3 contains the bottom of a ladder that moves you up to square 11. To represent this, `board[03]` is equal to `+08`, which is equivalent to an integer value of `8` (the difference between `3` and `11`). The unary plus operator (`+i`) balances with the unary minus operator (`-i`), and numbers lower than `10` are padded with zeros so that all board definitions align. (Neither stylistic tweak is strictly necessary, but they lead to neater code.)
+方塊3位在梯子的底部所以你可以上昇到方塊11。為了表現出前述的狀況，`board[03]`的值是`+08`，代表整數數值`8` (`3` 與`11`的差值)。 
+一元運算子加號(`+i`)跟一元運算子減號相對稱(`-i`)，並且在小於`10`的數字前多加零。(這些做法都不見得是必須的，但他們喜歡整齊的程式。)
 
-The player’s starting square is “square zero”, which is just off the bottom left corner of the board. The first dice roll always moves the player on to the board:
+玩家會從“方塊零”也就是指棋盤的左下角外開始。玩家第一次擲骰子後就會移動到擲出來的數字那格：
 
 ```swift
 var square = 0
@@ -213,21 +215,21 @@ while square < finalSquare {
 println("Game over!")
 ```
 
-This example uses a very simple approach to dice rolling. Instead of a random number generator, it starts with a `diceRoll` value of `0`. Each time through the `while` loop, `diceRoll` is incremented with the prefix increment operator (`++i`), and is then checked to see if it has become too large. The return value of `++diceRoll` is equal to the value of `diceRoll` *after* it is incremented. Whenever this return value equals 7, the dice roll has become too large, and is reset to a value of `1`. This gives a sequence of `diceRoll` values that is always `1`, `2`, `3`, `4`, `5`, `6`, `1`, `2` and so on.
+這個範例使用了非常簡單的方式來模擬擲骰子。 它讓`diceRoll`的值從`0`開始來代替亂數產生器。每次`while`迴圈執行的時候，`diceRoll` 的值會以前置運算子(`++i`)遞增，然後檢查這個值是否變得太大。`++diceRoll`的回傳值相當於`diceRoll`在遞增 *之後*的值。當回傳值等於7的時候，骰子擲出來的數字變得太大便將其值重新設定為`1`。這讓`diceRoll`的值總是會是個`1`, `2`, `3`, `4`, `5`, `6`, `1`, `2`等等以此類推的序列。
 
-After rolling the dice, the player moves forward by `diceRoll` squares. It’s possible that the dice roll may have moved the player beyond square 25, in which case the game is over. To cope with this scenario, the code checks that `square` is less than the `board` array’s `count` property before adding the value stored in `board[square]` onto the current `square` value to move the player up or down any ladders or snakes.
+擲出骰子後，玩家前進`diceRoll`數的格子。擲出來的結果可能會讓玩家移動到方塊25之後，在這種狀況下即宣告遊戲結束。為了處理這種狀況，在把`board[square]`的值加到`square`的現值讓玩家沿著梯子或蛇上昇或下降之前，程式會檢查`square`的值是否小於`board`這個陣列的`count`屬性。
 
-Had this check not been performed, `board[square]` might try to access a value outside the bounds of the `board` array, which would trigger an error. If `square` is now equal to `26`, the code would try to check the value of `board[26]`, which is larger than the size of the array.
+如果沒有做這項檢查的話，`board[square]`可能會去讀取`board`陣列的範圍之外的值，這會將會出錯。如果`square`等於`26`的話，程式會試著去檢查`board[26]`這個在陣列範圍外的值。
 
-The current `while` loop execution then ends, and the loop’s condition is checked to see if the loop should be executed again. If the player has moved on or beyond square number `25`, the loop’s condition evaluates to `false`, and the game ends.
+當現在這次`while`迴圈執行結束時，會檢查的迴圈執行條件來判斷是否繼續執行迴圈。如果玩家移到方塊`25`或之後，迴圈的執行條件會回傳 `false`並且結束這個遊戲。
 
-A `while` loop is appropriate in this case because the length of the game is not clear at the start of the `while` loop. Instead, the loop is executed until a particular condition is satisfied.
+`while`迴圈適合用在這個例子，因為在`while`迴圈執行之前並不知道遊戲會玩多久。相對的，迴圈會一直執行到滿足特定條件為止。
 
 ### Do-While
 
-The other variation of the `while` loop, known as the `do`-`while` loop, performs a single pass through the loop block first, *before* considering the loop’s condition. It then continues to repeat the loop until the condition is `false`.
+另外一個`while`迴圈的變形也就是大家都知道的 `do`-`while`迴圈，會在判斷迴圈條件*之前* 先執行一次迴圈內的程式。它會持續重複執行直到條件式回傳`false`。
 
-Here’s the general form of a `do`-`while` loop:
+以下是`do`-`while` 迴圈的一般形式：
 
 ```swift
 do {
@@ -235,7 +237,7 @@ do {
 } while condition
 ```
 
-Here’s the *Snakes and Ladders* example again, written as a `do`-`while` loop rather than a while loop. The values of `finalSquare`, `board`, `square`, and `diceRoll` are initialized in exactly the same way as with a `while` loop:
+這裡再次用*蛇梯棋*當作例子，以`do`-`while`代替while迴圈。`finalSquare`．`board`．`square`與`diceRoll`都以與 `while`迴圈版相同的方式初始化：
 
 ```swift
 let finalSquare = 25
@@ -246,9 +248,9 @@ var square = 0
 var diceRoll = 0
 ```
 
-In this version of the game, the *first* action in the loop is to check for a ladder or a snake. No ladder on the board takes the player straight to square 25, and so it is not possible to win the game by moving up a ladder. Therefore, it is safe to check for a snake or a ladder as the first action in the loop.
+在遊戲的這個版本，迴圈裡的*第一個*動作是檢查梯子或蛇。棋盤裡沒有梯子會把玩家帶到方塊25，因此不可能借由爬上梯子導致勝利。因此，以檢查梯子或蛇作為迴圈裡的第一個動作是安全的。
 
-At the start of the game, the player is on “square zero”. `board[0]` always equals `0`, and has no effect:
+在遊戲開始時，玩家為在方塊0。`board[0]`的值總是`0`，因此沒有影響：
 
 ```swift
 do {
@@ -262,9 +264,9 @@ do {
 println("Game over!")
 ```
 
-After the code checks for snakes and ladders, the dice is rolled, and the player is moved forward by `diceRoll` squares. The current loop execution then ends.
+在程式檢查過蛇與梯子後擲出骰子，然後玩家根據`diceRoll`前進。這次的迴圈結束。
 
-The loop’s condition (`while square < finalSquare`) is the same as before, but this time it is not evaluated until the *end* of the first run through the loop. The structure of the `do`-`while` loop is better suited to this game than the `while` loop in the previous example. In the `do`-`while` loop above, `square += board[square]` is always executed *immediately after* the loop’s `while` condition confirms that `square` is still on the board. This behavior removes the need for the array bounds check seen in the earlier version of the game.
+這個迴圈的條件 (`while square < finalSquare`)跟前一個範例一樣，但在這次的版本裡會直到迴圈第一次*結束*後才會執行。`do`-`while`迴圈的結構比前例中的`while`迴圈更適合這個遊戲。在上面的`do`-`while`迴圈裡，`square += board[square]` 總是*緊接著*在`while`迴圈的條件判斷之後也就說`square`還在board的範圍內。這個流程省略了遊戲的上個版本中檢查陣列範圍的動作。
 
 ## Conditional Statements
 
