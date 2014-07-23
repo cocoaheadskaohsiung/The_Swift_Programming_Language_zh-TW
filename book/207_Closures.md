@@ -1,24 +1,25 @@
-# Closures
+# 閉包
 ---
-*Closures* are self-contained blocks of functionality that can be passed around and used in your code. Closures in Swift are similar to blocks in C and Objective-C and to lambdas in other programming languages.
-Closures can capture and store references to any constants and variables from the context in which they are defined. This is known as *closing* over those constants and variables, hence the name “closures”. Swift handles all of the memory management of capturing for you.
+*閉包*是自包含的程式碼區塊，可以在程式碼中被傳遞以及使用。Swift的Closures相似於C與Objective-C中的blocks以及其他語言中的lambdas。
 
-> **Note**
+閉包可以捕捉和儲存任意常數和變數在其所定義的文檔內。這就是所謂*閉合*這些文檔中的常數與變數，故俗稱閉包。捕捉過程中相關的記憶體管理Swift會幫你一併處理掉。
+
+> **注意**
 >
-> Don’t worry if you are not familiar with the concept of “capturing”. It is explained in detail below in [Capturing Values](#capturing-values "Capturing Values").
+> 如果你對於捕捉的概念不是很清楚也不用擔心， 您可以在 [捕捉值](#capturing-values "Capturing Values")此一章節中找到詳盡的解釋.
 
-Global and nested functions, as introduced in [Functions](206_Functions.html "Functions"), are actually special cases of closures. Closures take one of three forms:
+在[函式](206_Functions.html "Functions")章節中介紹的全域函式和巢狀函式也是特殊的閉包。閉包有下列三種不同的形式：
 
-- Global functions are closures that have a name and do not capture any values.
-- Nested functions are closures that have a name and can capture values from their enclosing function.
-- Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.
+- 全域函式是一個有名字但不捕捉任何值的閉包
+- 巢狀函式是一個有名字且可以捕捉外圍函式（enclosing function）中的值的閉包
+- 閉包表達式是一個用輕量級語法所寫，可以捕捉其上下文中的變數或常數值的匿名閉包
 
-Swift’s closure expressions have a clean, clear style, with optimizations that encourage brief, clutter-free syntax in common scenarios. These optimizations include:
+Swift的閉包表達式有乾淨簡潔的語法風格，並且針對常見用法進行優化。主要優化的地方有：
 
-- Inferring parameter and return value types from context
-- Implicit returns from single-expression closures
-- Shorthand argument names
-- Trailing closure syntax
+- 利用上下文自動判斷參數與回傳值的型別
+- 隱式返回單一表達式閉包，即單一表達式可以省略`return`關鍵字
+- 參數名稱縮寫
+- 尾隨（Trailing）式閉包語法（譯者註：即->後面加上回傳值型別）
 
 ## Closure Expressions##
 
