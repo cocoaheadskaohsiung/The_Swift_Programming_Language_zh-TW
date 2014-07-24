@@ -11,7 +11,7 @@
    * [聚集型態 (YoGa)](book/204_Collection_Types.md)
    * [Control Flow (DDT)](book/205_Control_Flow.md)
    * [Functions (Hank Hsiao)](book/206_Functions.md)
-   * [Closures](book/207_Closures.md)
+   * [閉包 (MRSHIH)](book/207_Closures.md)
    * [Enumerations](book/208_Enumerations.md)
    * [Classes and Structures](book/209_Classes_and_Structures.md)
    * [Properties](book/210_Properties.md)
