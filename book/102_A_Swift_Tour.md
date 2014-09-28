@@ -220,7 +220,7 @@ secondForLoop
 
 ## 函式 Functions 與 Closures
 
-使用 `func` 來宣告函式。使用名稱和參數來呼叫函式。使用 `->` 於參數型別與名稱之後來指定函式回傳值。
+使用 `func` 來宣告函式。呼叫函式則是以函式名稱及參數來呼叫。可使用 `->` 於函式名稱與參數型別之後來指定函式回傳值的型別。
 
 ```c++
 func greet(name: String, day: String) -> String {
@@ -276,7 +276,7 @@ func returnFifteen() -> Int {
 returnFifteen()
 ```
 
-函式屬於第一級的類別，意味著函式也可以被當作另一個函式的回傳值。
+函式屬於第一級的類別(first-class type)，這意味著函式也可以被當作另一個函式的回傳值。
 
 ```c++
 func makeIncrementer() -> (Int -> Int) {
@@ -328,7 +328,7 @@ numbers.map({
 numbers.map({ number in 3 * number })
 ```
 
-你可以透過參數位置而非參數名稱來引用參數--這個方法使用於簡短的 clousers 會很實用。當一個 closure 作為最後一個參數傳給函式時，可以直接接在函式的括號之後。
+你可以透過參數位置而非參數名稱來引用參數--這個方法使用於簡短的 closures 會很實用。當一個 closure 作為最後一個參數傳給函式時，可以直接接在函式的括號之後。
 
 ```c++
 sort([1, 5, 3, 12, 2]) { $0 > $1 }
@@ -445,15 +445,15 @@ triangle.perimeter = 9.9
 triangle.sideLength
 ```
 
-在 `setter` 中，新值的名稱自動被稱為 `newValue`，您可以在之後給予明確的名稱。
+在 `setter` 中，新值的名稱自動被稱為 `newValue`，您可以在之後將新值設定給有更加明確的名稱的變數。
 
 請注意 EquilateralTriangle 類別的建構函式有三個步驟：
 
-  1. 在子類別的定義中設了屬性值
-  2. 使用了父類別的建構函式
-  3. 改變了父類別定義的屬性值。其他如調用方法、 getter 、 setter 也都在此階段完成
+  1. 設定在子類別定義的屬性值
+  2. 呼叫父類別的建構函式
+  3. 修改父類別定義的屬性值。其他如調用方法、 getter 、 setter 也都在此階段完成
 
-如果您不需要計算屬性，但仍需要在執行程前碼前與設置新值之後，請使用 `willSet` 與 `didSet`。例如下例中的 square 的 sideLength 會與 triangle 的 sideLength 會保持一致。
+如果您不需要計算屬性，但仍需要在設置新值之前或之後做一些處理，請使用 `willSet` 與 `didSet`。例如下例中的 square 的 sideLength 會與 triangle 的 sideLength 會保持一致。
 
 ```c++
 class TriangleAndSquare {
@@ -479,7 +479,7 @@ triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
 triangleAndSquare.triangle.sideLength
 ```
 
-類別中的方法與函式有一個重要的分別。函式的參數名稱只在函式的內部使用，但方法的參數名稱會使用於調用方法時(第一個參數除外)。在預設情況中，方法的參數名稱和它在方法內部的名稱一樣，不過在使用於方法內部時，您也可以為其定義第二個名稱。
+類別中的方法與函式有一個重要的分別。函式的參數名稱只在函式的內部使用，但方法的參數名稱會使用於調用方法時(第一個參數除外)。在預設情況中，方法的參數名稱和它在方法內部的名稱一樣，不過在使用於方法內部時，您也可以為其定義第二個名稱(如下例的times)。
 
 ```c++
 class Counter {
@@ -492,7 +492,7 @@ var counter = Counter()
 counter.incrementBy(2, numberOfTimes: 7)
 ```
 
-當處理 optional 值時，您可以用 `?` 在方法、屬性與子腳本前。如果 `?` 之前是 `nil`，在 `?` 之後的東西都會被忽略，而且整段式子都會回傳 `nil`。否則，所有的 optional 值都會被解開，在 `?` 之後的都會被執行。在這兩種情況下，整個表達式都會是個 optional 值。
+當處理 optional 值時，您可以使用 `?` 在方法、屬性與子腳本(subscripting)前。如果 `?` 之前的值是 `nil`，在 `?` 之後的東西都會被忽略，而且整個表達式都會回傳 `nil`。否則，所有的 optional 值都會被解開，在 `?` 之後的都會被執行。在下列兩種情況下，整個表達式都會是個 optional 值。
 
 ```c++
 let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
