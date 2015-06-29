@@ -21,6 +21,7 @@ The Swift Programming Language 正體中文版
 - MRSHIH
 - HankH
 - YoGa
+- Yulin0629
 
 ## 我想協助翻譯 ##
 ---
